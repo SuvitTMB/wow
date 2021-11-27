@@ -306,7 +306,7 @@ function Upload1() {
 			alert("Upload ภาพที่ได้ทำการแคปหน้าจอไว้");
 			exit();
 		}
-		var uploadTask = firebase.storage().ref('wow/'+ImgName+".png").put(files[0]);
+		var uploadTask = firebase.storage().ref('wow/'+ImgName+".jpg").put(files[0]);
 		uploadTask.on('state_changed', function(snapshot){
 			var progress = (snapshot.bytesTranferred / snapshot.totalBytes) * 100;
 			mission_wow = "<div class='headwow'><u>กิจกรรมที่ 1</u> :  โชว์คะแนน WOW ของคุณ</div>";
@@ -324,12 +324,12 @@ function Upload1() {
 					ShowIMG11 : url
 				});
 				document.getElementById("View1").style.display = "none";
+				BadgeUpDate();
 				CheckDatabase();
 			}
 		);
 	});
 	}
-	BadgeUpDate();
 }
 
 
@@ -360,7 +360,7 @@ function Upload2() {
 			alert("คุณต้อง Upload ภาพที่ได้ทำการแคปหน้าจอไว้");
 			exit();
 		}
-		var uploadTask = firebase.storage().ref('wow/'+ImgName2+".png").put(files[0]);
+		var uploadTask = firebase.storage().ref('wow/'+ImgName2+".jpg").put(files[0]);
 		uploadTask.on('state_changed', function(snapshot){
 			var progress = (snapshot.bytesTranferred / snapshot.totalBytes) * 100;
 			mission_wow = "<div class='headwow'><u>กิจกรรมที่ 2</u> :  ใช้ WOW ไปแลกของรางวัล</div>";
@@ -379,11 +379,11 @@ function Upload2() {
 					ShowIMG22 : url
 				});
 				document.getElementById("View3").style.display = "none";
+				BadgeUpDate();
 				CheckDatabase();
 			}
 		);
 	});
-	BadgeUpDate();
 	}
 }
 
@@ -414,7 +414,7 @@ function Upload3() {
 			alert("2. คุณต้อง Upload ภาพที่ได้ทำการแคปหน้าจอไว้");
 			exit();
 		}
-		var uploadTask = firebase.storage().ref('wow/'+ImgName3+".png").put(files[0]);
+		var uploadTask = firebase.storage().ref('wow/'+ImgName3+".jpg").put(files[0]);
 		uploadTask.on('state_changed', function(snapshot){
 			var progress = (snapshot.bytesTranferred / snapshot.totalBytes) * 100;
 			mission_wow = "<div class='headwow'><u>กิจกรรมที่ 3</u> :  โพสประสบการณ์ WOW บน FB</div>";
@@ -434,11 +434,11 @@ function Upload3() {
 					ShowIMG33 : url
 				});
 				document.getElementById("View5").style.display = "none";
+				BadgeUpDate();
 				CheckDatabase();
 			}
 		);
 	});
-	BadgeUpDate();
 	}
 }
 
@@ -469,7 +469,7 @@ function Upload4() {
 			alert("3. คุณต้อง Upload ภาพที่ได้ทำการแคปหน้าจอไว้");
 			exit();
 		}
-		var uploadTask = firebase.storage().ref('wow/'+ImgName4+".png").put(files[0]);
+		var uploadTask = firebase.storage().ref('wow/'+ImgName4+".jpg").put(files[0]);
 		uploadTask.on('state_changed', function(snapshot){
 			var progress = (snapshot.bytesTranferred / snapshot.totalBytes) * 100;
 			mission_wow = "<div class='headwow'><u>กิจกรรมที่ 4</u> : แชร์/แนะนำ ttb WOW บน FB</div>";
@@ -487,11 +487,11 @@ function Upload4() {
 					ShowIMG44 : url
 				});
 				document.getElementById("View7").style.display = "none";
+				BadgeUpDate();
 				CheckDatabase();
 			}
 		);
 	});
-	BadgeUpDate();
 	}
 }
 
