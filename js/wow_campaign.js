@@ -179,9 +179,9 @@ function CheckGetBadgeUser() {
       //alert("BadgeTime="+sBadgeTime+" ||| BadgeTarget="+sBadgeTarget);
 
     if(sBadgeEnd==0) {
-    	alert("BadgeEnd="+sBadgeEnd);
+    	//alert("BadgeEnd="+sBadgeEnd);
       if(sBadgeTime>=sBadgeTarget) {
-        alert("EidWOWScore="+EidWOWScore);
+        //alert("EidWOWScore="+EidWOWScore);
 		dbWOWScore.doc(EidWOWScore).update({
 			WOWGame1 : parseFloat(sBonusPoint),
 			WOWScore : sWOWScore+parseFloat(sBonusPoint),
