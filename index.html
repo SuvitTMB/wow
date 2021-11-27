@@ -25,9 +25,7 @@
   <link href='css/app.css' rel="stylesheet" type="text/css">
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
-<!--
   <script src="https://static.line-scdn.net/liff/edge/versions/2.12.0/sdk.js"></script>
--->
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
   <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
 
@@ -54,40 +52,15 @@
           <div style="color:#0056ff;font-size:18px;margin-top:-20px;">LINE Retail Society</div>
           <div style="padding:15px 0px 15px 0px;">
             <center>
-              <div style="margin-top:60px;font-size: 16px;color:#0056ff;line-height: 1.4;font-weight: 600;">ยินดีต้อนรับสู่<br>LINE Retail Society</div>
-              <div style="margin-top:40px;"><img id="pictureUrl" class="imgprofile"></div>
+              <div style="margin-top:60px;font-size: 18px;color:#0056ff;line-height: 1.4;font-weight: 600;">ยินดีต้อนรับสู่<br>LINE Retail Society</div>
+              <div style="margin-top:40px;"><img id="pictureUrl" class="imgprofile" style="width:140px;"></div>
               <div style="color:#0056ff;font-weight: 700; font-size:16px;margin-top:12px;"><p id="displayName"></p></div>
               <div id="loading" style="margin-top:20px;text-align: center;"><img src="./img/loading.gif"></div>
               <div id="UserYesReg" style="display:none;">
-                <div class="btn-t2" onclick="ClickCheckLogin()">ลงทะเบียนเข้าร่วมงาน</div>
+                <div class="btn-t2" onclick="ClickCheckLogin()">ลงทะเบียนเข้าใช้งาน</div>
                 <div style="padding-top:25px;color:#555555;">ขอความร่วมมือในการกรอกข้อมูลของท่าน<br>ก่อนเริ่มการเข้าใช้งาน <b>LINE Retail Society</b><br><br><br>*** ขอสงวนสิทธิ์การเข้าใช้งานเฉพาะชาว Retail เท่านั้น ***</div>
               </div>
               <div id="UserNoReg" style="display:none;">
-                <!--
-                <div style="color:#555555; font-size: 12px;font-weight: 600;">เลือกรายการที่ต้องการดูข้อมูล</div>
-                <div id="RegisterDate" style="font-size: 12px; color:#999;margin-bottom: 20px;"></div>
-                <div class="container-max" style="margin-top:30px;background: #f68b1f;padding:10px;border-radius: 15px;">
-                -->
-                <div class="container-max">
-                  <center>
-                  <div style="max-width:400px; width:100%; margin:auto;padding-top:10px;">
-                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_campaign.html'">
-                      <div><img src="./img/DigitalYmpic.png" style="padding:8px 0 0 0;height: 104px;"><br>ภารกิจพิชิต WOW</div>
-                    </div>
-                    <!--
-                    <div class="col-xs-6 boxmenu" onclick="window.location.href='checkproduct.html'">
-                      <div><img src="./img/banner-1.png" style="padding:8px 0 0 0;height: 104px;"><br>ภารกิจเช็คผลิตภัณฑ์</div>
-                    </div>
-                    -->
-                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_fanpantan.html'">
-                      <div><img src="./img/banner-2.png" style="padding:8px 0 0 0;height: 104px;"><br>ภารกิจแฟนพันธุ์แท้ WOW</div>
-                    </div>
-
-
-                  </div>
-                  <div class="clr" style="height:20px;"></div>
-                  </center>
-                </div>
               </div>
             </center>
           </div>
@@ -169,6 +142,19 @@
       </div>
 
 
+      <div class="container" id="PleaseRegister" style="display: none;background:#ffffff;margin-bottom: 50px;width:95%;border-radius: 15px;">
+        <div class="section-title" data-aos="fade-up">
+          <center>
+            <div class="btn-t2" onclick="ClickCheckLogin()">กรุณาลงทะเบียนก่อนเริ่มใช้งาน</div>
+            <div style="padding-top:25px;color:#55555;"><font color="#ff0000"><b>
+              ขอให้ทำการลงทะเบียนเพื่อขอใช้งาน LINE Retail Society<br></b></font><br><br>
+            *** ขอสงวนสิทธิ์การเข้าใช้งานเฉพาะชาว Retail เท่านั้น ***</div>
+
+          </center>
+          <div class="clr" style="height: 40px;"></div>
+        </div>
+      </div>
+
 
       <div class="container" id="UserBlocked" style="display: none;background:#ffffff;margin-bottom: 50px;width:95%;border-radius: 15px;">
         <div class="section-title" data-aos="fade-up">
@@ -201,17 +187,15 @@
 <script src="./js/session.js?ver=0002"></script>
 
 <script type="text/javascript">
-
+  var sstatusconfirm = 1;
   var aCheck = 0;
   var Eid = "";
-  //var aStatusConfirm = 0;
-  //var aStatusEdit = 0;
-  //var sGroupReg = "Prudentital";
   var dateString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
 
-/*
+
   async function main() {
-    await liff.init({ liffId: "1655966947-8DgrpDq6" });
+    //await liff.init({ liffId: "1655966947-pvwn54O3" });
+    function _0x51ad(){var _0x1daa12=['507881MNKeel','60kADfQk','675626UiQbhI','26788joBNPx','855mPwhfF','32jLznmn','init','22180XwEdWZ','4kQSSoO','2204076JbvbFA','138zDliUE','133629GTjuPG','345720lLAsml'];_0x51ad=function(){return _0x1daa12;};return _0x51ad();}var _0x84dbe8=_0xe581;function _0xe581(_0x1f2da1,_0x30500f){var _0x51ada0=_0x51ad();return _0xe581=function(_0xe581c0,_0x5611ae){_0xe581c0=_0xe581c0-0x1a7;var _0x3796cf=_0x51ada0[_0xe581c0];return _0x3796cf;},_0xe581(_0x1f2da1,_0x30500f);}(function(_0x7e1e19,_0x1919fa){var _0x51fa3d=_0xe581,_0x41263d=_0x7e1e19();while(!![]){try{var _0x10b1ae=parseInt(_0x51fa3d(0x1b2))/0x1*(parseInt(_0x51fa3d(0x1af))/0x2)+parseInt(_0x51fa3d(0x1b1))/0x3*(-parseInt(_0x51fa3d(0x1aa))/0x4)+-parseInt(_0x51fa3d(0x1b3))/0x5+parseInt(_0x51fa3d(0x1b0))/0x6+-parseInt(_0x51fa3d(0x1a9))/0x7*(-parseInt(_0x51fa3d(0x1ac))/0x8)+parseInt(_0x51fa3d(0x1ab))/0x9*(-parseInt(_0x51fa3d(0x1ae))/0xa)+parseInt(_0x51fa3d(0x1a7))/0xb*(-parseInt(_0x51fa3d(0x1a8))/0xc);if(_0x10b1ae===_0x1919fa)break;else _0x41263d['push'](_0x41263d['shift']());}catch(_0xc3cf79){_0x41263d['push'](_0x41263d['shift']());}}}(_0x51ad,0x314b1),await liff[_0x84dbe8(0x1ad)]({'liffId':'1655966947-oZd1EXDA'}));
     document.getElementById("isLoggedIn").append(liff.isLoggedIn());
     if(liff.isLoggedIn()) {
       getUserProfile();
@@ -222,6 +206,7 @@
   main()
 
 
+  var getPicture = "";
   async function getUserProfile() {
     const profile = await liff.getProfile();
     document.getElementById("pictureUrl").src = profile.pictureUrl;
@@ -233,6 +218,7 @@
     sessionStorage.setItem("LineID", profile.userId);
     sessionStorage.setItem("LineName", profile.displayName);
     sessionStorage.setItem("LinePicture", profile.pictureUrl);
+    getPicture = profile.pictureUrl;
     ReadData();
   }
 
@@ -243,69 +229,25 @@
       external: true     
     })
   }
-*/
 
-//alert(sessionStorage.getItem("LineID"));
-document.getElementById("pictureUrl").src = sessionStorage.getItem("LinePicture");
-document.getElementById("pictureUrl1").src = sessionStorage.getItem("LinePicture");
-document.getElementById("userId").append(sessionStorage.getItem("LineID"));
-document.getElementById("displayName").append(sessionStorage.getItem("LineName"));
-document.getElementById("displayName1").append(sessionStorage.getItem("LineName"));
+function _0x311d(_0x2e51fb,_0x53cdd1){var _0x3b9165=_0x3b91();return _0x311d=function(_0x311d95,_0x222822){_0x311d95=_0x311d95-0x1f0;var _0x43bf56=_0x3b9165[_0x311d95];return _0x43bf56;},_0x311d(_0x2e51fb,_0x53cdd1);}var _0x3d09ef=_0x311d;(function(_0xff84a1,_0x30902d){var _0x2bb2c2=_0x311d,_0x108122=_0xff84a1();while(!![]){try{var _0x47220e=parseInt(_0x2bb2c2(0x1f0))/0x1+-parseInt(_0x2bb2c2(0x1f3))/0x2+parseInt(_0x2bb2c2(0x1f9))/0x3*(parseInt(_0x2bb2c2(0x1fa))/0x4)+-parseInt(_0x2bb2c2(0x1f4))/0x5*(parseInt(_0x2bb2c2(0x1fb))/0x6)+parseInt(_0x2bb2c2(0x1f2))/0x7*(-parseInt(_0x2bb2c2(0x1f7))/0x8)+-parseInt(_0x2bb2c2(0x200))/0x9+-parseInt(_0x2bb2c2(0x1fc))/0xa*(-parseInt(_0x2bb2c2(0x1f6))/0xb);if(_0x47220e===_0x30902d)break;else _0x108122['push'](_0x108122['shift']());}catch(_0x1116fb){_0x108122['push'](_0x108122['shift']());}}}(_0x3b91,0x390cc));function _0x3b91(){var _0x5eeedc=['AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE','336oYPUfS','479490EAaxis','18620ikhBwf','1:653667385625:web:a5aed08500de80839f0588','13849OJRGVm','34064tJAyzr','retailproject-6f4fc.firebaseapp.com','39fXXISv','89592RWVPoi','12KgRHku','2230PvKeMU','retailproject-6f4fc','G-9SKTRHHSW9','retailproject-6f4fc.appspot.com','178209VyTyez','133123vaHKXg'];_0x3b91=function(){return _0x5eeedc;};return _0x3b91();}var firebaseConfig={'apiKey':_0x3d09ef(0x1f1),'authDomain':_0x3d09ef(0x1f8),'projectId':_0x3d09ef(0x1fd),'storageBucket':_0x3d09ef(0x1ff),'messagingSenderId':'653667385625','appId':_0x3d09ef(0x1f5),'measurementId':_0x3d09ef(0x1fe)};
+
+var _0x488e58=_0x4e27;(function(_0x32753c,_0x1ca7bf){var _0x25ebfa=_0x4e27,_0x31716a=_0x32753c();while(!![]){try{var _0x51c485=-parseInt(_0x25ebfa(0x1f9))/0x1*(-parseInt(_0x25ebfa(0x1f6))/0x2)+parseInt(_0x25ebfa(0x1fc))/0x3+parseInt(_0x25ebfa(0x1f3))/0x4+-parseInt(_0x25ebfa(0x1fa))/0x5*(parseInt(_0x25ebfa(0x1f8))/0x6)+parseInt(_0x25ebfa(0x1f7))/0x7+parseInt(_0x25ebfa(0x1f4))/0x8*(-parseInt(_0x25ebfa(0x1fd))/0x9)+-parseInt(_0x25ebfa(0x1f5))/0xa*(-parseInt(_0x25ebfa(0x1fb))/0xb);if(_0x51c485===_0x1ca7bf)break;else _0x31716a['push'](_0x31716a['shift']());}catch(_0x48c30d){_0x31716a['push'](_0x31716a['shift']());}}}(_0x5ccd,0x3e554),firebase[_0x488e58(0x1fe)](firebaseConfig));function _0x5ccd(){var _0x3d3f35=['2551385rXOdcd','537724rcwvGb','134994iulnmT','225qeAJkD','initializeApp','collection','CheckProfile','1940676pBIBjZ','128416utgmZO','60shxlBr','3728ZbyGxI','1973370gyRtvx','6NOpCZi','33dNAXNW'];_0x5ccd=function(){return _0x3d3f35;};return _0x5ccd();}function _0x4e27(_0x290f2f,_0xd87729){var _0x5ccdac=_0x5ccd();return _0x4e27=function(_0x4e27bb,_0x501053){_0x4e27bb=_0x4e27bb-0x1f1;var _0x155696=_0x5ccdac[_0x4e27bb];return _0x155696;},_0x4e27(_0x290f2f,_0xd87729);}var db=firebase['firestore']()[_0x488e58(0x1f1)](_0x488e58(0x1f2));
 
 
-
-  var firebaseConfig = {
-    apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
-    authDomain: "retailproject-6f4fc.firebaseapp.com",
-    projectId: "retailproject-6f4fc",
-    storageBucket: "retailproject-6f4fc.appspot.com",
-    messagingSenderId: "653667385625",
-    appId: "1:653667385625:web:a5aed08500de80839f0588",
-    measurementId: "G-9SKTRHHSW9"
-  };
-
-  firebase.initializeApp(firebaseConfig);
-  var db = firebase.firestore().collection("CheckProfile");
-
-  //ReadData();
-
-
-/*
-  function ClickAgenda() {
-    document.getElementById('ViewAgenda').style.display='block';
-  }
-
-  function ClickReward() {
-    document.getElementById('ViewReward').style.display='block';
-  }
-
-
-  function ClickQRcode() {
-    document.getElementById('ViewQRcode').style.display='block';
-  }
-
-
-  function ClickSurvey() {
-    document.getElementById('ViewSurvey').style.display='block';
-  }
-*/
 
   function ClickCheckLogin() {
+    if(sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
     document.getElementById('CheckProfile').style.display='block';
     document.getElementById('CheckLogin').style.display='none';
     document.getElementById('UserWaitting').style.display = 'none';
     document.getElementById('UserWaitting').style.display = 'none';
-    //document.getElementById('ViewAgenda').style.display='none';
-    //document.getElementById('ViewQRcode').style.display='none';
-    //document.getElementById('ViewSurvey').style.display='none';
-    //document.getElementById('ViewReward').style.display='none';
-    //ReadData();
+    document.getElementById('PleaseRegister').style.display = 'none';
   }
-  ReadData();
+
 
 
   function ReadData() {
-    //alert(alineID);
     db.where('lineID','==',sessionStorage.getItem("LineID"))
     .get().then((snapshot)=> {
       snapshot.forEach(doc=> {
@@ -315,6 +257,8 @@ document.getElementById("displayName1").append(sessionStorage.getItem("LineName"
         sessionStorage.setItem("EmpName", doc.data().empName);
         sessionStorage.setItem("EmpBR", doc.data().empBr);
         sessionStorage.setItem("EmpRH", doc.data().empRH);
+        sessionStorage.setItem("Address", doc.data().empAddress);
+        sessionStorage.setItem("EmpPhone", doc.data().empPhone);      
         document.getElementById("empid").value = doc.data().empID;
         document.getElementById("fname").value = doc.data().empName;
         document.getElementById("phone").value = doc.data().empPhone;
@@ -325,17 +269,20 @@ document.getElementById("displayName1").append(sessionStorage.getItem("LineName"
         var ShowRegister = "เมื่อวันที่ : "+doc.data().RegisterDate;
         $("#RegisterDate").html(ShowRegister);
         Eid = doc.id;
+        sstatusconfirm = doc.data().statusconfirm;
+
         aCheck = 1;
         //StatusConfirm 0 = ใหม่ , 1 = อนุมัติ , 2 = รออนุมัติ , 9 = ไม่อนุมัติ
-        //alert(doc.data().statusconfirm);
         if(doc.data().statusconfirm==1) {
+          UpdateLine();
+          window.location.href = 'wow.html';
           //อนุมัติ
+          //sessionStorage.getItem("StatusPass") = doc.data().statusconfirm;
           document.getElementById('loading').style.display = 'none';
           document.getElementById('UserWaitting').style.display = 'none';
-          //document.getElementById('UserNoReg').style.display = 'block';
           document.getElementById('UserNoReg').style.display = 'none';
           document.getElementById('UserYesReg').style.display = 'none';
-          window.location.href = 'wow.html';
+          document.getElementById('PleaseRegister').style.display = 'none';
         } else if(doc.data().statusconfirm==2) {
           //รออนุมัติ
           document.getElementById('loading').style.display = 'none';
@@ -343,6 +290,16 @@ document.getElementById("displayName1").append(sessionStorage.getItem("LineName"
           document.getElementById('UserNoReg').style.display = 'none';
           document.getElementById('UserYesReg').style.display = 'none';
           document.getElementById('UserBlocked').style.display = 'none';
+          document.getElementById('PleaseRegister').style.display = 'none';
+        } else if(doc.data().statusconfirm==0) {
+          //ขอเข้าใช้งาน
+          sstatusconfirm = 2;
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('UserWaitting').style.display = 'none';
+          document.getElementById('UserNoReg').style.display = 'none';
+          document.getElementById('UserYesReg').style.display = 'none';
+          document.getElementById('UserBlocked').style.display = 'none';
+          document.getElementById('PleaseRegister').style.display = 'block';
         } else if(doc.data().statusconfirm==9) {
           //ไม่อนุมัติ
           document.getElementById('loading').style.display = 'none';
@@ -350,12 +307,14 @@ document.getElementById("displayName1").append(sessionStorage.getItem("LineName"
           document.getElementById('UserNoReg').style.display = 'none';
           document.getElementById('UserYesReg').style.display = 'none';
           document.getElementById('UserBlocked').style.display = 'block';
+          document.getElementById('PleaseRegister').style.display = 'none';
         } else {
           document.getElementById('loading').style.display = 'none';
           document.getElementById('UserWaitting').style.display = 'none';
           document.getElementById('UserNoReg').style.display = 'none';
           document.getElementById('UserYesReg').style.display = 'none';
           document.getElementById('UserBlocked').style.display = 'block';
+          document.getElementById('PleaseRegister').style.display = 'none';
         }
       });
       if(aCheck==0) {
@@ -364,11 +323,22 @@ document.getElementById("displayName1").append(sessionStorage.getItem("LineName"
         document.getElementById('UserNoReg').style.display = 'none';
         document.getElementById('UserYesReg').style.display = 'block';
         document.getElementById('UserBlocked').style.display = 'none';
+        document.getElementById('PleaseRegister').style.display = 'none';
       }
     });
-
-
   }
+
+
+function UpdateLine() {
+  //alert("Update-3 "+Eid);
+  db.doc(Eid).update({
+    lineID : sessionStorage.getItem("LineID"),
+    linename : sessionStorage.getItem("LineName"),
+    empPicture : sessionStorage.getItem("LinePicture")
+  });
+  //alert("Update-3 "+sessionStorage.getItem("LinePicture"));
+
+}
 
 
 function ClickSaveProfile() {
@@ -396,7 +366,6 @@ function ClickSaveProfile() {
     CheckReq = CheckReq+1;
     document.getElementById("memo_req").innerHTML = "";
   } 
-
   if(CheckReq==3) {
     if(document.getElementById("fname").value!="") { var a1 = document.getElementById("fname").value; } else { var a1 = "";}
     if(document.getElementById("empid").value!="") { var a2 = document.getElementById("empid").value; } else { var a2 = "";}
@@ -408,6 +377,7 @@ function ClickSaveProfile() {
     if(document.getElementById("memo").value!="") { var a8 = document.getElementById("memo").value; } else { var a8 = "";}
     NewDate();
     if(aCheck==1) {
+      //alert("Save "+sstatusconfirm);
       db.doc(Eid).update({
         lineID : sessionStorage.getItem("LineID"),
         linename : sessionStorage.getItem("LineName"),
@@ -419,6 +389,7 @@ function ClickSaveProfile() {
         empRH : a7,
         empAddress : a6,   
         memo : a8, 
+        statusconfirm : sstatusconfirm,  
         lastcheckin : dateString,
         RegisterDate : dateString
       });
@@ -445,13 +416,9 @@ function ClickSaveProfile() {
     }
     document.getElementById('id01').style.display='block';   
     if(GotoPage==1) {
-      //GotoWeb();
       document.getElementById('CheckLogin').style.display='block';
       document.getElementById('CheckProfile').style.display='none';
-      //document.getElementById('CheckConfirm').style.display='block';
       document.getElementById('DisplayList').style.display='none';
-      //document.getElementById('CheckLockUser').style.display='none';
-      //window.location.href = 'index.html';
     }
     ReadData();
 
@@ -460,7 +427,6 @@ function ClickSaveProfile() {
 
 
 function CloseAll() {
-    //$('iframe').attr('src', $('iframe').attr('src'));
     ReadData();
     document.getElementById('id01').style.display='none';
 }
@@ -468,12 +434,6 @@ function CloseAll() {
 
 function CloseAgenda() {
     document.getElementById('UserWaitting').style.display = 'none';
-/*
-    document.getElementById('ViewQRcode').style.display='none';
-    document.getElementById('ViewAgenda').style.display='none';
-    document.getElementById('ViewSurvey').style.display='none';
-    document.getElementById('ViewReward').style.display='none';
-*/
 }
 
 function GotoWeb() {
@@ -488,12 +448,9 @@ function DisplayOCSE() {
   $('#tbresult').html('');
   document.getElementById('DisplayList').style.display='block';
   var table = document.querySelector('#tbresult');
-  //document.getElementById('tbresult').value = "";
-  //document.getElementById('tbresult').innerHTML = "";
   db.where('GroupReg','==',aGroupReg).get().then((snapshot)=> {
     snapshot.forEach(doc=>{
       showData(doc);
-      //console.log(doc.data());
     });
   });
   var i = 0;
@@ -509,9 +466,7 @@ function DisplayOCSE() {
     cell1.innerHTML = '<div style="width:40px;text-align:center;">'+i+'</div>';
     cell2.innerHTML = '<div style="width:50px;text-align:center;"><img src="'+doc.data().empPicture+'" class="imgprofile-ss"></div>';
     cell3.innerHTML = '<span style="width:290px;color:#0056ff; font-size:12px;font-weight:600;">'+doc.data().linename+'</span><br><span style="color:#f68b1f; font-size:12px;">'+doc.data().empName+'</span><br><span style="color:#000000; font-size:10px;line-height: 1.2;">'+doc.data().empAddress+'</span><br><span style="color:#000000; font-size:10px;line-height: 1.2;">'+doc.data().empPhone+'</span>';
-    //cell4.innerHTML = doc.data().empName;
   }
-  //document.getElementById('tbresult').innerHTML = "";
 }
 
 function export2csv() {
@@ -565,17 +520,8 @@ function phone_formatting(ele,restore) {
   }
   else {
     new_number = number;
-  }
-  
-  // if value is heigher than 12, last number is dropped
-  // if inserting a number before the last character, numbers
-  // are shifted right, only 12 characters will show
+  } 
   ele.value =  (new_number.length > 12) ? new_number.substring(12,0) : new_number;
-  
-  // restore cursor selection,
-  // prevent it from going to the end
-  // UNLESS
-  // cursor was at the end AND a dash was added
   document.getElementById('msg').innerHTML='<p>Selection is: ' + selection_end + ' and length is: ' + new_number.length + '</p>';
   
   if (new_number.slice(-1) === '-' && restore === false
@@ -591,6 +537,7 @@ function phone_formatting(ele,restore) {
   ele.setSelectionRange(selection_start, selection_end);
 
 }
+  
   
 function phone_number_check(field,e) {
   var key_code = e.keyCode,
@@ -638,7 +585,7 @@ document.getElementById('phone').onkeyup = function(e) {
 
 
 function GotoGame() {
-  location.href = "introgame.html";
+  location.href = "wow.html";
 }
 
 
@@ -677,7 +624,7 @@ function checkZero(data){
   <div class="w3-modal-content w3-card-4">
     <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
       <div style="padding-top:20px;"><img src="./img/true.jpg" width="120px;"></div>
-        <div style="padding-top:20px;color:#0056ff;padding-bottom: 30px;">ระบบได้ทำการบันทึกรายการเรียบร้อยแล้ว<br>หากต้องการแก้ไขให้กด "เช็คข้อมูลของคุณให้ถูกต้อง" อีกครั้ง<br><br><font color="#ff0000"><b>กรุณาตรวจสอบความถูกต้องของ<br>รหัสพนักงาน, ชื่อ-นามสกุล<br>
+        <div style="padding-top:20px;color:#0056ff;padding-bottom: 30px;">ระบบได้ทำการบันทึกรายการเรียบร้อยแล้ว<br>หากต้องการแก้ไขให้กด<br>"อยู่ระหว่างตรวจสอบข้อมูล" อีกครั้ง<br><br><font color="#ff0000"><b>กรุณาตรวจสอบความถูกต้องของ<br>รหัสพนักงาน, ชื่อ-นามสกุล<br>
           หากข้อมูลไม่ถูกต้องจะไม่ได้รับอนุญาตให้เข้าใช้งาน</b></font></div>
         <div class="btn-t2" onclick="CloseAll()">ปิดหน้าต่าง</div>
       </center>
