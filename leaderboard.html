@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/app.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <link rel="stylesheet" href="./css/progress-bar.css">
+  <!--<script src="./js/progress-bar.js"></script>-->
+  <style type="text/css">
+   .table>tbody>tr>td, .table>tbody>tr>th, .table>tfoot>tr>td, .table>tfoot>tr>th, .table>thead>tr>td, .table>thead>tr>th { 
+      padding: 3px; 
+   }    
+  </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #ffffff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!--
+<div class="navbar1">
+  <center><div class="btn-t2" onclick="location.href='intro.html'">กลับไปหน้าแรก</div></center>#0016ed
+</div>
+-->
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html">Retail Society</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="wow.html">หน้าแรก</a></li>
+          <li><a href="youknowwow.html">รู้จัก WOW ให้มากขึ้น</a></li>
+          <li><a href="wow_campaign.html">ภารกิจพิชิต WOW</a></li>
+          <li><a href="wow_fanpantan.html">แฟนพันธุ์แท้ WOW</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <center>
+  <div class="row" style="margin:70px auto 0 auto; width:100%;">
+    <div style="font-size: 15px; color:#0056ff; font-weight: 600;">แฟนพันธุ์แท้ WOW 50 อันดับแรก</div>
+    <div id="team" style="font-size: 13px; color:#f68b1f;font-weight: 600;">มาเช็คดูกันว่าใครเป็นผู้นำการเข่งขันกันแล้ว</div>
+
+    <!--<div style="margin-top:35px;"><img src="./img/head-7.png" style="height:45px;"></div>-->
+      <div style="margin-top:-40px;">
+        <div id="MyScore"></div>
+      </div>
+      <div class="clr"></div>
+      <div style="margin-top:65px;max-width:360px;width:100%;">
+        <div id="DisplayBoard"></div>
+        <div class="clr"></div>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="clr" style="height: 20px;"></div>
+  <div class="btn-t2" onclick="location.href='wow_fanpantan.html'">แฟนพันธุ์แท้ WOW</div>
+  <div class="btn-t1" onclick="location.href='wow.html'">กลับไปเมนูหลัก</div>
+  <div style="height: 30px;"></div>
+  </center>
+
+
+  <div id="id01" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #ffffff;">
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+          <div class="header-line" style="margin:10px;color:#0056ff;font-weight: 600;">ข้อมูลผู้แข่งขัน</div>
+          <div style="margin-top: 10px;">
+            <div id="UserScore"></div>           
+              <center>
+              <div style="width:95%;margin-top:15px;">
+                <div class="box-wow-fan" style="width:21%;"><div style="font-size: 11px;">จำนวนแข่ง</div><div id="ShowJoinTime"></div><div style="margin-top:-5px;color:#f68b1f;font-size: 9px;">ครั้ง</div></div>
+                <div class="box-wow-fan" style="width:21%;"><div style="font-size: 11px;">ตอบถูก</div><div id="ShowRatioTrue"></div><div style="margin-top:-5px;color:#f68b1f;font-size: 9px;">เปอร์เซ็นต์</div></div>
+                <div class="box-wow-fan" style="width:21%;"><div style="font-size: 11px;">ตอบผิด</div><div id="ShowRatioFalse"></div><div style="margin-top:-5px;color:#f68b1f;font-size: 9px;">เปอร์เซ็นต์</div></div>
+                <div class="box-wow-fan" style="width:21%;"><div style="font-size: 11px;">คะแนนรวม</div><div id="ShowWOWGame2"></div><div style="margin-top:-5px;color:#f68b1f;font-size: 9px;">WOW</div></div>
+              </div>
+              </center>
+              <div class="clr"></div>
+            <div id="DisplayYourScore"></div>
+          </div>
+          <div class="btn-t2" onclick="CloseAll()" style="margin-top:20px;">ปิดหน้าต่าง</div>
+        </center>
+        <div style="height:10px;"></div>
+      </div>
+    </div>
+    <div style="height:30px;"></div>
+  </div>
+<!--
+  <script>
+      $(document).ready(function(){
+          $(".progress-bar").ProgressBar();
+      });
+  </script>
+-->
+  <!--<script  src="./js/session.js"></script>-->
+  <script src="./js/leaderboard.js"></script>
+</body>
+</html>

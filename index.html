@@ -1,0 +1,688 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <link href='css/app.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+<!--
+  <script src="https://static.line-scdn.net/liff/edge/versions/2.12.0/sdk.js"></script>
+-->
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #ffffff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <a class="navbar-brand" href="index.html">Retail Society</a>
+      </div>
+    </div>
+  </nav>
+
+  <main id="main">
+    <section id="team" class="team section-bg">
+      <div class="container" id="CheckLogin">
+        <div class="section-title" data-aos="fade-up" style="margin-top:10px;">
+          <div style="color:#0056ff;font-size:18px;margin-top:-20px;">LINE Retail Society</div>
+          <div style="padding:15px 0px 15px 0px;">
+            <center>
+              <div style="margin-top:60px;font-size: 16px;color:#0056ff;line-height: 1.4;font-weight: 600;">ยินดีต้อนรับสู่<br>LINE Retail Society</div>
+              <div style="margin-top:40px;"><img id="pictureUrl" class="imgprofile"></div>
+              <div style="color:#0056ff;font-weight: 700; font-size:16px;margin-top:12px;"><p id="displayName"></p></div>
+              <div id="loading" style="margin-top:20px;text-align: center;"><img src="./img/loading.gif"></div>
+              <div id="UserYesReg" style="display:none;">
+                <div class="btn-t2" onclick="ClickCheckLogin()">ลงทะเบียนเข้าร่วมงาน</div>
+                <div style="padding-top:25px;color:#555555;">ขอความร่วมมือในการกรอกข้อมูลของท่าน<br>ก่อนเริ่มการเข้าใช้งาน <b>LINE Retail Society</b><br><br><br>*** ขอสงวนสิทธิ์การเข้าใช้งานเฉพาะชาว Retail เท่านั้น ***</div>
+              </div>
+              <div id="UserNoReg" style="display:none;">
+                <!--
+                <div style="color:#555555; font-size: 12px;font-weight: 600;">เลือกรายการที่ต้องการดูข้อมูล</div>
+                <div id="RegisterDate" style="font-size: 12px; color:#999;margin-bottom: 20px;"></div>
+                <div class="container-max" style="margin-top:30px;background: #f68b1f;padding:10px;border-radius: 15px;">
+                -->
+                <div class="container-max">
+                  <center>
+                  <div style="max-width:400px; width:100%; margin:auto;padding-top:10px;">
+                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_campaign.html'">
+                      <div><img src="./img/DigitalYmpic.png" style="padding:8px 0 0 0;height: 104px;"><br>ภารกิจพิชิต WOW</div>
+                    </div>
+                    <!--
+                    <div class="col-xs-6 boxmenu" onclick="window.location.href='checkproduct.html'">
+                      <div><img src="./img/banner-1.png" style="padding:8px 0 0 0;height: 104px;"><br>ภารกิจเช็คผลิตภัณฑ์</div>
+                    </div>
+                    -->
+                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_fanpantan.html'">
+                      <div><img src="./img/banner-2.png" style="padding:8px 0 0 0;height: 104px;"><br>ภารกิจแฟนพันธุ์แท้ WOW</div>
+                    </div>
+
+
+                  </div>
+                  <div class="clr" style="height:20px;"></div>
+                  </center>
+                </div>
+              </div>
+            </center>
+          </div>
+
+        </div>
+      </div>
+
+
+      <div class="container" id="CheckProfile" style="display: none;">
+        <div class="section-title" data-aos="fade-up">
+          <center>
+          <div style="font-size: 16px;margin-top:90px;font-weight: 600;color:#000;">แก้ไขข้อมูลของคุณ</div>
+          <div style="margin-top:20px;"><img id="pictureUrl1" class="imgprofile"></div>
+          <div style="color:#0056ff;font-weight: 700; font-size:16px;"><p id="displayName1"></p></div>
+          </center>
+          <div style="color:#888888;text-align: left;padding:5px 30px;margin-top:15px;font-size:12px;">
+            <div>รหัสพนักงาน (ttb bank) <font color="#ff0000">*</font></div>
+            <div style="color:#0056ff;"><input type="number" id="empid" placeholder="รหัสพนักงาน .." pattern="[+-]?[0-9]" required></div>
+            <p id="empid_req" style="color:#ff0000;"></p>
+            <div>ชื่อ-นามสกุล (ภาษาไทย) <font color="#ff0000">*</font></div>
+            <div style="color:#0056ff;"><input type="text" id="fname" placeholder="ชื่อ นามสกุล .." required></div>
+            <p id="fname_req" style="color:#ff0000;"></p>
+            <div>โทรศัพท์มือถือ</div>
+            <div style="color:#0056ff;"><input type="text" name="phone" id="phone" pattern="[+-]?[0-9]"></div>
+            <div>สังกัดหน่วยงาน</div>
+            <div style="color:#0056ff;">
+              <select name="cars" id="br">
+                <option value="BBD" selected>BBD Team (สาขา, สำนักงานเขต, สำนักงานภาค)</option>
+                <option value="RASC">RSAC Team</option>
+                <option value="PRODUCT">PRODUCT Team</option>
+                <option value="OCSE">OCSE Team</option>
+                <option value="CHIEF">CHIEF Team</option>
+                <option value="OTHER">Other</option>
+              </select>
+            </div>
+            <div>สำนักงานภาค</div>
+            <div style="color:#0056ff;">
+              <select name="addrh" id="rh">
+                <option value="RH1">สำนักงานภาคธุรกิจสาขา 1</option>
+                <option value="RH2">สำนักงานภาคธุรกิจสาขา 2</option>
+                <option value="RH3">สำนักงานภาคธุรกิจสาขา 3</option>
+                <option value="RH4">สำนักงานภาคธุรกิจสาขา 4</option>
+                <option value="RH5">สำนักงานภาคธุรกิจสาขา 5</option>
+                <option value="RH6">สำนักงานภาคธุรกิจสาขา 6</option>
+                <option value="RH7">สำนักงานภาคธุรกิจสาขา 7</option>
+                <option value="Oth">อื่น ๆ</option>
+              </select>
+            </div>
+            <!--
+            <div>สังกัดหน่วยงาน</div>
+            <div><input type="text" id="br" placeholder="หน่วยงาน / สาขา (รหัสสาขา) .."></div>
+            <div>Email@ttbbank.com</div>
+            <div><input type="text" id="email" placeholder="ระบุอีเมล์ .."></div>
+            -->
+            <div>ที่อยู่สาขาสำหรับการจัดส่งของรางวัล (กรณีที่ได้รับรางวัล)</div>
+            <div style="color:#0056ff;"><textarea id="address" placeholder="ที่อยู่สาขาสำหรับการจัดส่งของรางวัล .." style="height:100px"></textarea></div>
+            <div>ระบุเหตุผลในการเข้าใช้งาน <font color="#ff0000">*</font></div>
+            <div style="color:#0056ff;"><textarea id="memo" placeholder="โปรดระบุ .." style="height:100px" required></textarea></div>
+            <p id="memo_req" style="color:#ff0000;"></p>
+            <center><div class="btn-t2" onclick="ClickSaveProfile()">บันทึกรายการ</div></center>
+            <div class="clr" style="height: 30px;"></div>
+          </div>
+        </div>
+      </div>
+
+
+      <div class="container" id="UserWaitting" style="display: none;background:#ffffff;margin-bottom: 50px;width:95%;border-radius: 15px;">
+        <div class="section-title" data-aos="fade-up">
+          <center>
+            <div class="btn-t2" onclick="ClickCheckLogin()">อยู่ระหว่างตรวจสอบข้อมูล</div>
+            <div style="padding-top:25px;color:#55555;"><font color="#ff0000"><b>
+              ขณะนี้อยู่ในขั้นตอนการตรวจสอบข้อมูลการลงทะเบียนของคุณ<br>
+              โปรดรอการตรวจข้อมูลสอบภายใน 24 ชั่วโมง</b></font><br><br>
+            *** ขอสงวนสิทธิ์การเข้าใช้งานเฉพาะชาว Retail เท่านั้น ***</div>
+
+          </center>
+          <div class="clr" style="height: 40px;"></div>
+        </div>
+      </div>
+
+
+
+      <div class="container" id="UserBlocked" style="display: none;background:#ffffff;margin-bottom: 50px;width:95%;border-radius: 15px;">
+        <div class="section-title" data-aos="fade-up">
+          <center>
+            <div class="btn-t3" onclick="ClickCheckLogin()">กรุณาตรวจสอบข้อมูลอีกครั้ง</div>
+            <div style="padding-top:25px;color:#55555;"><font color="#ff0000"><b>
+              ข้อมูลของคุณไม่ถูกต้อง ระบบไม่อนุญาตให้เข้าใช้งาน<br>
+              กรุณาติดต่อผ่านช่องทาง Email<br>เพื่อขอเปิดใช้งาน LINE Retail Society</b></font><br>
+              *** ขอสงวนสิทธิ์การเข้าใช้งานเฉพาะชาว Retail เท่านั้น ***<br><br>
+              <div class="btn-t1" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=ขอเปิดการใช้งาน LINE Retail Society'">คลิกเพื่อส่ง Email</div>
+              </div>
+
+          </center>
+          <div class="clr" style="height: 40px;"></div>
+        </div>
+      </div>
+
+
+    </section>
+    <center>
+    <div style="margin-top:30px;font-size:10px;color:#555555;margin-bottom: 20px;font-weight: 700;">@LINE Retail Socitey</div>
+    <div><div id="isLoggedIn" style="color:#ffffff;"></div><div id="userId" style="color:#ffffff;"></div></div>
+    </center>
+  </main>
+  </div>
+  <a href="#" class="back-to-top"><i class="icofont-simple-up"></i></a>
+
+  <!-- Template Main JS File 
+  <script src="js/config.js"></script>-->
+<script src="./js/session.js?ver=0002"></script>
+
+<script type="text/javascript">
+
+  var aCheck = 0;
+  var Eid = "";
+  //var aStatusConfirm = 0;
+  //var aStatusEdit = 0;
+  //var sGroupReg = "Prudentital";
+  var dateString = new Date().toLocaleString('en-US', { timeZone: 'Asia/Jakarta' });
+
+/*
+  async function main() {
+    await liff.init({ liffId: "1655966947-8DgrpDq6" });
+    document.getElementById("isLoggedIn").append(liff.isLoggedIn());
+    if(liff.isLoggedIn()) {
+      getUserProfile();
+    } else {
+      liff.login();
+    }
+  }
+  main()
+
+
+  async function getUserProfile() {
+    const profile = await liff.getProfile();
+    document.getElementById("pictureUrl").src = profile.pictureUrl;
+    document.getElementById("pictureUrl1").src = profile.pictureUrl;
+    document.getElementById("userId").append(profile.userId);
+    document.getElementById("displayName").append(profile.displayName);
+    document.getElementById("displayName1").append(profile.displayName);
+    sessionStorage.setItem("LineLogin", profile.userId);
+    sessionStorage.setItem("LineID", profile.userId);
+    sessionStorage.setItem("LineName", profile.displayName);
+    sessionStorage.setItem("LinePicture", profile.pictureUrl);
+    ReadData();
+  }
+
+
+  function openWindow() {
+    liff.openWindow({
+      url: "https://line.me",
+      external: true     
+    })
+  }
+*/
+
+//alert(sessionStorage.getItem("LineID"));
+document.getElementById("pictureUrl").src = sessionStorage.getItem("LinePicture");
+document.getElementById("pictureUrl1").src = sessionStorage.getItem("LinePicture");
+document.getElementById("userId").append(sessionStorage.getItem("LineID"));
+document.getElementById("displayName").append(sessionStorage.getItem("LineName"));
+document.getElementById("displayName1").append(sessionStorage.getItem("LineName"));
+
+
+
+  var firebaseConfig = {
+    apiKey: "AIzaSyDfTJJ425U4OY0xac6jdhtSxDeuJ-OF-lE",
+    authDomain: "retailproject-6f4fc.firebaseapp.com",
+    projectId: "retailproject-6f4fc",
+    storageBucket: "retailproject-6f4fc.appspot.com",
+    messagingSenderId: "653667385625",
+    appId: "1:653667385625:web:a5aed08500de80839f0588",
+    measurementId: "G-9SKTRHHSW9"
+  };
+
+  firebase.initializeApp(firebaseConfig);
+  var db = firebase.firestore().collection("CheckProfile");
+
+  //ReadData();
+
+
+/*
+  function ClickAgenda() {
+    document.getElementById('ViewAgenda').style.display='block';
+  }
+
+  function ClickReward() {
+    document.getElementById('ViewReward').style.display='block';
+  }
+
+
+  function ClickQRcode() {
+    document.getElementById('ViewQRcode').style.display='block';
+  }
+
+
+  function ClickSurvey() {
+    document.getElementById('ViewSurvey').style.display='block';
+  }
+*/
+
+  function ClickCheckLogin() {
+    document.getElementById('CheckProfile').style.display='block';
+    document.getElementById('CheckLogin').style.display='none';
+    document.getElementById('UserWaitting').style.display = 'none';
+    document.getElementById('UserWaitting').style.display = 'none';
+    //document.getElementById('ViewAgenda').style.display='none';
+    //document.getElementById('ViewQRcode').style.display='none';
+    //document.getElementById('ViewSurvey').style.display='none';
+    //document.getElementById('ViewReward').style.display='none';
+    //ReadData();
+  }
+  ReadData();
+
+
+  function ReadData() {
+    //alert(alineID);
+    db.where('lineID','==',sessionStorage.getItem("LineID"))
+    .get().then((snapshot)=> {
+      snapshot.forEach(doc=> {
+        //StatusConfirm 0 = ใหม่ , 1 = อนุมัติ , 2 = รออนุมัติ , 9 = ไม่อนุมัติ
+        sessionStorage.setItem("StatusConfirm", doc.data().statusconfirm);
+        sessionStorage.setItem("EmpID", doc.data().empID);
+        sessionStorage.setItem("EmpName", doc.data().empName);
+        sessionStorage.setItem("EmpBR", doc.data().empBr);
+        sessionStorage.setItem("EmpRH", doc.data().empRH);
+        document.getElementById("empid").value = doc.data().empID;
+        document.getElementById("fname").value = doc.data().empName;
+        document.getElementById("phone").value = doc.data().empPhone;
+        document.getElementById("br").value = doc.data().empBr;
+        document.getElementById("rh").value = doc.data().empRH;
+        document.getElementById("address").value = doc.data().empAddress;
+        document.getElementById("memo").value = doc.data().memo;
+        var ShowRegister = "เมื่อวันที่ : "+doc.data().RegisterDate;
+        $("#RegisterDate").html(ShowRegister);
+        Eid = doc.id;
+        aCheck = 1;
+        //StatusConfirm 0 = ใหม่ , 1 = อนุมัติ , 2 = รออนุมัติ , 9 = ไม่อนุมัติ
+        //alert(doc.data().statusconfirm);
+        if(doc.data().statusconfirm==1) {
+          //อนุมัติ
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('UserWaitting').style.display = 'none';
+          //document.getElementById('UserNoReg').style.display = 'block';
+          document.getElementById('UserNoReg').style.display = 'none';
+          document.getElementById('UserYesReg').style.display = 'none';
+          window.location.href = 'wow.html';
+        } else if(doc.data().statusconfirm==2) {
+          //รออนุมัติ
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('UserWaitting').style.display = 'block';
+          document.getElementById('UserNoReg').style.display = 'none';
+          document.getElementById('UserYesReg').style.display = 'none';
+          document.getElementById('UserBlocked').style.display = 'none';
+        } else if(doc.data().statusconfirm==9) {
+          //ไม่อนุมัติ
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('UserWaitting').style.display = 'none';
+          document.getElementById('UserNoReg').style.display = 'none';
+          document.getElementById('UserYesReg').style.display = 'none';
+          document.getElementById('UserBlocked').style.display = 'block';
+        } else {
+          document.getElementById('loading').style.display = 'none';
+          document.getElementById('UserWaitting').style.display = 'none';
+          document.getElementById('UserNoReg').style.display = 'none';
+          document.getElementById('UserYesReg').style.display = 'none';
+          document.getElementById('UserBlocked').style.display = 'block';
+        }
+      });
+      if(aCheck==0) {
+        document.getElementById('loading').style.display = 'none';
+        document.getElementById('UserWaitting').style.display = 'none';
+        document.getElementById('UserNoReg').style.display = 'none';
+        document.getElementById('UserYesReg').style.display = 'block';
+        document.getElementById('UserBlocked').style.display = 'none';
+      }
+    });
+
+
+  }
+
+
+function ClickSaveProfile() {
+  var GotoPage = 0;
+  var CheckReq = 0;
+  var inpObj = document.getElementById("empid");
+  var inpObj1 = document.getElementById("fname");
+  var inpObj2 = document.getElementById("memo");
+
+  if (!inpObj.checkValidity()) {
+    document.getElementById("empid_req").innerHTML = inpObj.validationMessage;
+  } else {
+    CheckReq = CheckReq+1;
+    document.getElementById("empid_req").innerHTML = "";
+  } 
+  if (!inpObj1.checkValidity()) {
+    document.getElementById("fname_req").innerHTML = inpObj1.validationMessage;
+  } else {
+    CheckReq = CheckReq+1;
+    document.getElementById("fname_req").innerHTML = "";
+  } 
+  if (!inpObj2.checkValidity()) {
+    document.getElementById("memo_req").innerHTML = inpObj2.validationMessage;
+  } else {
+    CheckReq = CheckReq+1;
+    document.getElementById("memo_req").innerHTML = "";
+  } 
+
+  if(CheckReq==3) {
+    if(document.getElementById("fname").value!="") { var a1 = document.getElementById("fname").value; } else { var a1 = "";}
+    if(document.getElementById("empid").value!="") { var a2 = document.getElementById("empid").value; } else { var a2 = "";}
+    if(document.getElementById("phone").value!="") { var a4 = document.getElementById("phone").value; } else { var a4 = "";}
+    if(document.getElementById("br").value!="") { var a5 = document.getElementById("br").value; } else { var a5 = "";}
+    if(document.getElementById("rh").value!="") { var a7 = document.getElementById("rh").value; } else { var a7 = "";}
+    if(document.getElementById("address").value!="") { var a6 = document.getElementById("address").value; } else { var a6 = "";}
+    if(a5!="BBD") { a7="Oth"; }
+    if(document.getElementById("memo").value!="") { var a8 = document.getElementById("memo").value; } else { var a8 = "";}
+    NewDate();
+    if(aCheck==1) {
+      db.doc(Eid).update({
+        lineID : sessionStorage.getItem("LineID"),
+        linename : sessionStorage.getItem("LineName"),
+        empPicture : sessionStorage.getItem("LinePicture"),
+        empName : a1,
+        empID : a2,
+        empPhone : a4,
+        empBr : a5,
+        empRH : a7,
+        empAddress : a6,   
+        memo : a8, 
+        lastcheckin : dateString,
+        RegisterDate : dateString
+      });
+      GotoPage = 1;
+    } else {
+      db.add({
+        lineID : sessionStorage.getItem("LineID"),
+        linename : sessionStorage.getItem("LineName"),
+        empPicture : sessionStorage.getItem("LinePicture"),
+        empName : a1,
+        empID : a2,
+        empPhone : a4,
+        empBr : a5,
+        empRH : a7,
+        empAddress : a6,   
+        memo : a8, 
+        lastcheckin : dateString,
+        RegisterDate : dateString,
+        statusconfirm : 2,  
+        statuspass : 0,
+        statusedit : 1   
+      });
+      GotoPage = 1;
+    }
+    document.getElementById('id01').style.display='block';   
+    if(GotoPage==1) {
+      //GotoWeb();
+      document.getElementById('CheckLogin').style.display='block';
+      document.getElementById('CheckProfile').style.display='none';
+      //document.getElementById('CheckConfirm').style.display='block';
+      document.getElementById('DisplayList').style.display='none';
+      //document.getElementById('CheckLockUser').style.display='none';
+      //window.location.href = 'index.html';
+    }
+    ReadData();
+
+  }
+}
+
+
+function CloseAll() {
+    //$('iframe').attr('src', $('iframe').attr('src'));
+    ReadData();
+    document.getElementById('id01').style.display='none';
+}
+
+
+function CloseAgenda() {
+    document.getElementById('UserWaitting').style.display = 'none';
+/*
+    document.getElementById('ViewQRcode').style.display='none';
+    document.getElementById('ViewAgenda').style.display='none';
+    document.getElementById('ViewSurvey').style.display='none';
+    document.getElementById('ViewReward').style.display='none';
+*/
+}
+
+function GotoWeb() {
+  window.location.href = 'register.html';
+}
+
+
+
+var aEmpBr = "OCSE";
+
+function DisplayOCSE() {
+  $('#tbresult').html('');
+  document.getElementById('DisplayList').style.display='block';
+  var table = document.querySelector('#tbresult');
+  //document.getElementById('tbresult').value = "";
+  //document.getElementById('tbresult').innerHTML = "";
+  db.where('GroupReg','==',aGroupReg).get().then((snapshot)=> {
+    snapshot.forEach(doc=>{
+      showData(doc);
+      //console.log(doc.data());
+    });
+  });
+  var i = 0;
+
+
+  function showData(doc) {
+    i = i+1;
+    var row = table.insertRow(-1);
+    var cell1 = row.insertCell(0);
+    var cell2 = row.insertCell(1);
+    var cell3 = row.insertCell(2);
+    //var cell4 = row.insertCell(3);
+    cell1.innerHTML = '<div style="width:40px;text-align:center;">'+i+'</div>';
+    cell2.innerHTML = '<div style="width:50px;text-align:center;"><img src="'+doc.data().empPicture+'" class="imgprofile-ss"></div>';
+    cell3.innerHTML = '<span style="width:290px;color:#0056ff; font-size:12px;font-weight:600;">'+doc.data().linename+'</span><br><span style="color:#f68b1f; font-size:12px;">'+doc.data().empName+'</span><br><span style="color:#000000; font-size:10px;line-height: 1.2;">'+doc.data().empAddress+'</span><br><span style="color:#000000; font-size:10px;line-height: 1.2;">'+doc.data().empPhone+'</span>';
+    //cell4.innerHTML = doc.data().empName;
+  }
+  //document.getElementById('tbresult').innerHTML = "";
+}
+
+function export2csv() {
+  let data = "";
+  const tableData = [];
+  const rows = document.querySelectorAll("table tr");
+  for (const row of rows) {
+    const rowData = [];
+    for (const [index, column] of row.querySelectorAll("th, td").entries()) {
+      // To retain the commas in the "Description" column, we can enclose those fields in quotation marks.
+      if ((index + 1) % 3 === 0) {
+        rowData.push('"' + column.innerText + '"');
+      } else {
+        rowData.push(column.innerText);
+      }
+    }
+    tableData.push(rowData.join(","));
+  }
+  data += tableData.join("\n");
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(new Blob([data], { type: "text/csv" }));
+  a.setAttribute("download", "data.csv");
+  document.body.appendChild(a);
+  a.click();
+  document.body.removeChild(a);
+}
+
+
+function phone_formatting(ele,restore) {
+  var new_number,
+      selection_start = ele.selectionStart,
+      selection_end = ele.selectionEnd,
+      number = ele.value.replace(/\D/g,'');
+  
+  // automatically add dashes
+  if (number.length > 2) {
+    // matches: 123 || 123-4 || 123-45
+    new_number = number.substring(0,3) + '-';
+    if (number.length === 4 || number.length === 5) {
+      // matches: 123-4 || 123-45
+      new_number += number.substr(3);
+    }
+    else if (number.length > 5) {
+      // matches: 123-456 || 123-456-7 || 123-456-789
+      new_number += number.substring(3,6) + '-';
+    }
+    if (number.length > 6) {
+      // matches: 123-456-7 || 123-456-789 || 123-456-7890
+      new_number += number.substring(6);
+    }
+  }
+  else {
+    new_number = number;
+  }
+  
+  // if value is heigher than 12, last number is dropped
+  // if inserting a number before the last character, numbers
+  // are shifted right, only 12 characters will show
+  ele.value =  (new_number.length > 12) ? new_number.substring(12,0) : new_number;
+  
+  // restore cursor selection,
+  // prevent it from going to the end
+  // UNLESS
+  // cursor was at the end AND a dash was added
+  document.getElementById('msg').innerHTML='<p>Selection is: ' + selection_end + ' and length is: ' + new_number.length + '</p>';
+  
+  if (new_number.slice(-1) === '-' && restore === false
+      && (new_number.length === 8 && selection_end === 7)
+          || (new_number.length === 4 && selection_end === 3)) {
+      selection_start = new_number.length;
+      selection_end = new_number.length;
+  }
+  else if (restore === 'revert') {
+    selection_start--;
+    selection_end--;
+  }
+  ele.setSelectionRange(selection_start, selection_end);
+
+}
+  
+function phone_number_check(field,e) {
+  var key_code = e.keyCode,
+      key_string = String.fromCharCode(key_code),
+      press_delete = false,
+      dash_key = 189,
+      delete_key = [8,46],
+      direction_key = [33,34,35,36,37,38,39,40],
+      selection_end = field.selectionEnd;
+  
+  // delete key was pressed
+  if (delete_key.indexOf(key_code) > -1) {
+    press_delete = true;
+  }
+  
+  // only force formatting is a number or delete key was pressed
+  if (key_string.match(/^\d+$/) || press_delete) {
+    phone_formatting(field,press_delete);
+  }
+  // do nothing for direction keys, keep their default actions
+  else if(direction_key.indexOf(key_code) > -1) {
+    // do nothing
+  }
+  else if(dash_key === key_code) {
+    if (selection_end === field.value.length) {
+      field.value = field.value.slice(0,-1)
+    }
+    else {
+      field.value = field.value.substring(0,(selection_end - 1)) + field.value.substr(selection_end)
+      field.selectionEnd = selection_end - 1;
+    }
+  }
+  // all other non numerical key presses, remove their value
+  else {
+    e.preventDefault();
+//    field.value = field.value.replace(/[^0-9\-]/g,'')
+    phone_formatting(field,'revert');
+  }
+
+}
+
+document.getElementById('phone').onkeyup = function(e) {
+  phone_number_check(this,e);
+}
+
+
+function GotoGame() {
+  location.href = "introgame.html";
+}
+
+
+function NewDate() {
+  var today = new Date();
+  var day = today.getDate() + "";
+  var month = (today.getMonth() + 1) + "";
+  var year = today.getFullYear() + "";
+  var hour = today.getHours() + "";
+  var minutes = today.getMinutes() + "";
+  var seconds = today.getSeconds() + "";
+  var ampm = hour >= 12 ? 'PM' : 'AM';
+
+  day = checkZero(day);
+  month = checkZero(month);
+  year = checkZero(year);
+  hour = checkZero(hour);
+  minutes = checkZero(minutes);
+  seconds = checkZero(seconds);
+
+  dateString = day + "/" + month + "/" + (parseInt(year)+543) + " " + hour + ":" + minutes + ":" + seconds +" "+ ampm;
+  //alert(GetNewDate);
+  //console.log(day + "/" + month + "/" + year + " " + hour + ":" + minutes + ":" + seconds +" "+ ampm);
+}
+
+function checkZero(data){
+  if(data.length == 1){
+    data = "0" + data;
+  }
+  return data;
+}
+
+</script>
+
+<div id="id01" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+      <div style="padding-top:20px;"><img src="./img/true.jpg" width="120px;"></div>
+        <div style="padding-top:20px;color:#0056ff;padding-bottom: 30px;">ระบบได้ทำการบันทึกรายการเรียบร้อยแล้ว<br>หากต้องการแก้ไขให้กด "เช็คข้อมูลของคุณให้ถูกต้อง" อีกครั้ง<br><br><font color="#ff0000"><b>กรุณาตรวจสอบความถูกต้องของ<br>รหัสพนักงาน, ชื่อ-นามสกุล<br>
+          หากข้อมูลไม่ถูกต้องจะไม่ได้รับอนุญาตให้เข้าใช้งาน</b></font></div>
+        <div class="btn-t2" onclick="CloseAll()">ปิดหน้าต่าง</div>
+      </center>
+    </div>
+  </div>
+</div>
+</body>
+</html>

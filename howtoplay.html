@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <link href='css/app.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-storage.js"></script> 
+  <script src="https://www.gstatic.com/firebasejs/8.8.1/firebase-analytics.js"></script> 
+
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+
+  <style>
+   .imgView { height: 200px;width:200px; border:2px solid #f68b1f; border-radius: 10px;}
+  </style>
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #fff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html">Retail Society</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="wow.html">หน้าแรก</a></li>
+          <li><a href="youknowwow.html">รู้จัก WOW ให้มากขึ้น</a></li>
+          <li><a href="wow_campaign.html">ภารกิจพิชิต WOW</a></li>
+          <li><a href="wow_fanfuntan.html">แฟนพันธุ์แท้ WOW</a></li>
+        </ul>
+      </div>    
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="team section-bg">
+      <div class="container" style="margin-top:90px;">
+        <center>
+          <div style="font-size: 15px; color:#0056ff; font-weight: 600;">ภารกิจพิชิต WOW</div>
+          <div id="team" style="font-size: 13px; color:#f68b1f;font-weight: 600;">มาร่วมกิจกรรมภารกิจพิชิต WOW กัน</div>
+          <div style="padding:10px;">
+            <div style="padding:8px;font-size: 18px; font-weight: 600;color:#000;">โชว์ - ใช้ - โพส - แชร์</div>
+            <div><img src="./img/ttbWOW_logo_23Mar21-01.png" width="70%"></div>
+          </div>
+          <div style="font-size: 11px; color:#999999; margin-top:10px;">ทำครบ 4 กิจกรรม รับ ttb WOW กันไปเลย</div>
+          <div style="max-width:390px; width:90%; margin:20px auto;">
+            <div class="transfer-wow">
+              <div class="transfer-wow-header"><u>กิจกรรมที่ 1</u> : โชว์คะแนน WOW ของคุณ</div>
+                <div class="w3-row" style="margin-top:12px;">
+                  <div class="w3-col" style="width:30%;text-align: center;">
+                    <img src="./img/R-1.png" class="ympic-icon">
+                  </div>
+                  <div class="w3-col" style="width:70%;padding-left: 8px;">
+                    <div>เปิด ttb touch ของคุณไปเช็ค WOW กัน แล้วไปแคปหน้าจอมาดูกันว่าคุณมีกี่ WOW แล้ว เพื่อเตรียมตัวไปแลกของรางวัลกัน</div>
+                    <div class="btn-t2" id="View1" onclick="ClickSend(1)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;">แคปหน้าจอมาบอกเรา</div>
+                    <div class="btn-t4" id="View2" onclick="ClickView(1)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;text-align: center">คุณทำรายการนี้แล้ว</div>
+                  </div>
+                </div>
+            </div>
+            <div class="transfer-wow">
+              <div class="transfer-wow-header"><u>กิจกรรมที่ 2</u> : ใช้ WOW ไปแลกของรางวัล</div>
+                <div class="w3-row" style="margin-top:12px;">
+                  <div class="w3-col" style="width:30%;text-align: center;">
+                    <img src="./img/g-1.png" class="ympic-icon">
+                  </div>
+                  <div class="w3-col" style="width:70%;padding-left: 8px;">
+                    <div>เราอยากให้คุณได้ประสบการณ์การแลก ttb WOW โดยเปิด ttb touch ของคุณ เข้าไปที่ ttb WOW ทำการแลกของรางวัล แล้วแคปหน้าจอมาบอกเรา</div>
+
+                    <div class="btn-t2" id="View3" onclick="ClickSend(2)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;">แคปหน้าจอมาบอกเรา</div>
+                    <div class="btn-t4" id="View4" onclick="ClickView(2)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;text-align: center">คุณทำรายการนี้แล้ว</div>
+<!--
+                    <div class="btn-t2" onclick="ClickSend(2)" style="padding: 4px 20px;font-size: 11px;right: 0;">แคปหน้าจอมาบอกเรา</div>
+-->
+                  </div>
+                </div>
+            </div>
+
+            <div class="transfer-wow">
+              <div class="transfer-wow-header"><u>กิจกรรมที่ 3</u> : โพสประสบการณ์ WOW บน FB</div>
+                <div class="w3-row" style="margin-top:12px;">
+                  <div class="w3-col" style="width:30%;text-align: center;">
+                    <img src="./img/R-3.png" class="ympic-icon">
+                  </div>
+                  <div class="w3-col" style="width:70%;padding-left: 8px;">
+                    <div>เขียนประสบการณ์ในการแลก WOW ของคุณให้เพื่อนๆ บน Facebook ติด #ประสบการณ์WOW แล้วแคปหน้าจอมาบอกเรา</div>
+                    <div class="btn-t2" id="View5" onclick="ClickSend(3)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;">แคปหน้าจอมาบอกเรา</div>
+                    <div class="btn-t4" id="View6" onclick="ClickView(3)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;text-align: center">คุณทำรายการนี้แล้ว</div>
+<!--
+                    <div class="btn-t2" onclick="ClickSend(3)" style="padding: 4px 20px;font-size: 11px;right: 0;">แคปหน้าจอมาบอกเรา</div>
+-->
+                  </div>
+                </div>
+            </div>
+
+            <div class="transfer-wow">
+              <div class="transfer-wow-header"><u>กิจกรรมที่ 4</u> : แชร์/แนะนำ ttb WOW บน FB</div>
+                <div class="w3-row" style="margin-top:12px;">
+                  <div class="w3-col" style="width:30%;text-align: center;">
+                    <img src="./img/R-4.png" class="ympic-icon" style="width:90%">
+                  </div>
+                  <div class="w3-col" style="width:70%;padding-left: 8px;">
+                    <div>แชร์เรื่องราวเกี่ยวกับ ttb WOW บน Facebook หรือภาพยนตร์โฆษณา ttb bank  แล้วแคปหน้าจอมาบอกเรา</div>
+                    <div class="btn-t2" id="View7" onclick="ClickSend(4)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;">แคปหน้าจอมาบอกเรา</div>
+                    <div class="btn-t4" id="View8" onclick="ClickView(4)" style="padding: 4px 20px;font-size: 11px;right: 0;display:none;width:180px;text-align: center">คุณทำรายการนี้แล้ว</div>
+                  </div>
+                </div>
+            </div>
+          </div>
+          <div class="clr"></div>
+        </center>
+      </div>
+    </section>
+  </main>
+  <div class="clr" style="height: 10px;"></div>
+  <center>
+    <div id="btn-1" class="btn-t2" onclick="window.location.href='howtoplay.html';">กติกา/เงื่อนไข</div>
+    <div id="btn-1" class="btn-t1" onclick="window.location.href='wow.html';">กลับหน้าแรก</div>
+    <div style="margin-top:30px;font-size:10px;color:#555555;margin-bottom: 20px;font-weight: 700;">@LINE Retail Socitey</div>
+  </center>
+  <div class="clr" style="height: 10px;"></div>
+
+
+</body>
+</html>
+<!--https://www.naishare.com/blog/how-to-upload-files-to-firebase-cloud-storage-using-javascript-->

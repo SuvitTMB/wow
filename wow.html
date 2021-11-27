@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta content="" name="description">
+  <meta content="" name="keywords">
+  <meta content="width=device-width, initial-scale=1.0" name="viewport">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+  <link href='css/app.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+
+
+</head>
+
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #ffffff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html">Retail Society</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="wow.html">หน้าแรก</a></li>
+          <li><a href="youknowwow.html">รู้จัก WOW ให้มากขึ้น</a></li>
+          <li><a href="wow_campaign.html">ภารกิจพิชิต WOW</a></li>
+          <li><a href="wow_fanpantan.html">แฟนพันธุ์แท้ WOW</a></li>
+        </ul>
+      </div> 
+    </div>
+  </nav>
+
+  <main id="main">
+    <section class="team section-bg">
+      <div class="wow-bg"></div>
+      <div class="clr"></div>
+      <div class="container">
+        <div class="section-title" data-aos="fade-up" style="margin-top:10px;">
+          <div style="padding:15px 0px 15px 0px;">
+            <center>
+              <div style="margin-top:10px;font-size: 15px;color:#0056ff;line-height: 1.4;font-weight: 600;">LINE Retail Society<br>ชวนคุณเข้าร่วมภารกิจพิชิต WOW</div>
+              <div style="padding:20px 10px; font-weight: 600; color:#f68b1f;"><b>LINE Retail Society</b> ชวนคุณร่วม WOW กับเราตลอดเดือนธันวาคม<br>ด้วยกิจกรรมที่ลับเฉพาะสำหรับคุณ เราจะมาเรียบรู้ประสบการณ์การได้รับ WOW,<br>การใช้ WOW เพื่อแลกของรางวัล และพร้อมกับการแชร์ประสบการณ์ WOW ให้กับ<br>ลูกค้าของเรา กับ 2 ภารกิจที่คุณจะพลาดไม่ได้แม้แต่วันเดียว ...</div>
+
+              <div style="max-width:390px; width:70%; margin:0px auto;">
+              <div style="margin-top:10px;"><img id="pictureUrl" class="imgprofile"></div>
+              <div style="color:#0056ff;font-weight: 600; font-size:16px;margin-top:0px;"><p id="displayName"></p></div>
+                <div style="width:100%; margin:auto;">
+                  <div class="box-Game"><div style="font-size: 11px;">ภารกิจที่ 1</div>
+                  <div id="ShowWOWGame1"></div>
+                  <div class="box-wow-number3">WOW</div></div>
+                  <div class="box-Game"><div style="font-size: 11px;">ภารกิจที่ 2</div>
+                  <div id="ShowWOWGame2"></div>
+                  <div class="box-wow-number3">WOW</div></div>
+                  <div class="box-Game" style="background-color: #fae0c7;">
+                  <div style="font-size: 11px;">คะแนน WOW</div>
+                  <div id="ShowWOWScore"></div>
+                  <div class="box-wow-number3">WOW</div></div>
+                </div>
+                <div class="clr"></div>
+              </div>
+              <div style="font-size: 11px; color:#999999; margin-top:9px;margin-bottom: 20px;">คะแนน WOW ล่าสุดที่คุณทำได้ตามภารกิจที่กำหนดไว้</div>
+              <div class="clr"></div>
+
+              <div style="padding:10px;margin-top:25px;max-width:390px;">
+                <div><img src="./img/R-2.png" style="max-width:70%;"></div>
+                <div style="padding:8px;font-size: 12px; font-weight: 600;color:#777;">มี WOW ก็เหมือนมีเงิน 1 WOW = 1 บาท</div>
+                <div class="txt-qq">เราอยากให้คุณรู้จัก ttb WOW ให้มากยิ่งขึ้น เพื่อสร้างประสบการณ์ที่ดีสำหรับการนำไปบอกต่อให้กับลูกค้าของเรา มาร่วมสะสม WOW และนำไปใช้แลกของรางวัลจาก ttb WOW กันกับ 2 ภารกิจของเรา</div>
+                <div class="btn-t1" onclick="window.location.href='youknowwow.html';">มารู้จัก WOW ให้มากยิ่งขึ้นก่อนพิชิตภารกิจ</div>
+              </div>
+
+              <!--
+              <div style="margin-top:40px;"><img id="pictureUrl" class="imgprofile"></div>
+              <div style="color:#0056ff;font-weight: 700; font-size:16px;margin-top:12px;"><p id="displayName"></p></div>
+              <div id="loading" style="margin-top:20px;text-align: center;"><img src="./img/loading.gif"></div>
+              <div id="UserYesReg">
+                <div class="btn-t2" onclick="ClickCheckLogin()">ลงทะเบียนเข้าร่วมงาน</div>
+                <div style="padding-top:25px;color:#555555;">ขอความร่วมมือในการกรอกข้อมูลของท่าน<br>ก่อนเริ่มการเข้าใช้งาน <b>LINE Retail Society</b><br><br><br>*** ขอสงวนสิทธิ์การเข้าใช้งานเฉพาะชาว Retail เท่านั้น ***</div>
+              </div>
+              -->
+
+                <div class="container-max">
+                  <center>
+                  <div style="margin-top:40px;font-size: 15px;color:#0056ff;line-height: 1.4;font-weight: 600;">2 ภารกิจพิชิต WOW</div>
+                  <div style="max-width:390px; width:100%; margin-top:-10px;padding-top:20px;">
+                    <div>
+                      <div class="w3-col" style="width:50%;">
+                        <div class="transfer-wow">
+                          <div class="transfer-wow-header" style="margin-left: 5px;width:157px;text-align: center;">1. ภารกิจพิชิต WOW</div>
+                          <div class="w3-row" style="margin-top:12px;">
+                            <div><center><img src="./img/ttbWOW.png" width="80%"></center></div>
+                            <div class="button-one" onclick="window.location.href='wow_campaign.html'">เข้าร่วมภารกิจ<br>พิชิต 200 WOW<br>คลิกเลย</div>
+                            <div class="clr"></div>
+                          </div>
+                          <div class="clr" style="height: 5px;"></div>
+                        </div>
+                      </div>
+                      <div class="w3-col" style="width:50%;">
+                        <div class="transfer-wow">
+                          <div class="transfer-wow-header" style="margin-left: 5px;width:157px;text-align: center;">2. แฟนพันธุ์แท้ WOW</div>
+                          <div class="w3-row" style="margin-top:12px;">
+                            <div><center><img src="./img/fanpantan_wow@.png" width="80%"></center></div>
+                            <div class="button-one" onclick="window.location.href='wow_fanpantan.html'">เข้าร่วมภารกิจ<br>แฟนพันธุ์แท้ WOW<br>สะสม WOW รายวัน</div>
+                            <div class="clr"></div>
+                          </div>
+                          <div class="clr" style="height: 5px;"></div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="clr"></div>
+
+
+<!--
+                    <div class="transfer-wow">
+                      <div class="transfer-wow-header"><u>ภารกิจที่ 1</u> : ภารกิจพิชิต WOW</div>
+                      <div class="w3-row" style="margin-top:12px;">
+                        <div>
+                          <div class="w3-col" style="width:60%;text-align: center;">
+                            <img src="./img/ttbWOW.png" width="70%">
+                          </div>
+                          <div class="w3-col" style="width:40%;padding-left: 8px;">
+                            <div class="button-one" onclick="window.location.href='wow_fanpantan.html'">เข้าร่วมภารกิจ<br>พิชิต 200 WOW<br>คลิกเลย</div>
+                          </div>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="font12-blue-1">กิจกรรมมุ่งเน้นให้พนักงานมีประสบการณ์ในการเข้าใช้งาน ttb touch รู้ถึงการได้รับ ttb WOW และวิธีการแลกรางวัลจาก WOW ตลอดจนการบอกต่อให้เพื่อน ๆ และลูกค้าของเราได้รับประสบการณ์นี้ด้วยกัน</div>
+                      </div>
+                      <div class="clr" style="height: 5px;"></div>
+                    </div>
+
+
+
+                    <div class="transfer-wow" style="margin-top:50px;">
+                      <div class="transfer-wow-header"><u>ภารกิจที่ 2</u> : แฟนพันธุ์แท้ WOW</div>
+                      <div class="w3-row" style="margin-top:12px;">
+                        <div>
+                          <div class="w3-col" style="width:60%;text-align: center;">
+                            <img src="./img/fanpantan_wow@.png" width="70%">
+                          </div>
+                          <div class="w3-col" style="width:40%;padding-left: 8px;">
+                            <div class="button-one" onclick="window.location.href='wow_fanpantan.html'">เข้าร่วม<br>สะสม WOW รายวัน<br>คลิกเลย</div>
+                          </div>
+                        </div>
+                        <div class="clr"></div>
+                        <div class="font12-blue-1">กิจกรรมที่จะใช้ทดสอบความรู้ ความเข้าใจเกี่ยวกับการใช้งาน ttb WOW ของพนักงาน มีความรู้ที่มากพอในการส่งมอบประสบการณ์ที่ดีให้กับลูกค้าของเราได้มากน้อยแค่ไหน ทำการสะสม WOW ได้ถึงวันที่ 30 ธันวาคม นี้</div>
+                      </div>
+                      <div class="clr" style="height: 5px;"></div>
+                    </div>
+-->
+
+<!--
+
+                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_campaign.html'" style="width:46%;height: 130px;margin-right: 4%">
+                      <div><img src="./img/icon-5.png" style="padding:8px 0 0 0;height: 100px;"><br>ภารกิจพิชิต WOW</div>
+                    </div>
+                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_fanpantan.html'" style="width:46%;height: 130px;">
+                      <div><img src="./img/icon-5.png" style="padding:8px 0 0 0;height: 100px;"><br>ภารกิจแฟนพันธุ์แท้ WOW</div>
+                    </div>
+-->
+                  </div>
+                  <div class="clr"></div>
+                </center>
+              </div>
+
+            </center>
+          </div>
+        </div>
+      </div>
+    </section>
+
+
+    <center>
+      <div style="margin-top:10px;font-size:10px;color:#555555;margin-bottom: 20px;font-weight: 700;">@LINE Retail Socitey</div>
+      <div><div id="isLoggedIn" style="color:#ffffff;"></div><div id="userId" style="color:#ffffff;"></div></div>
+    </center>
+  </main>
+  </div>
+
+<script src="./js/wow.js"></script>
+
+</body>
+</html>
