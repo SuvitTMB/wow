@@ -223,7 +223,7 @@ function OpenTarget() {
 	//sText += '</div>';
 	str += '<center><div style="width:100%;padding-top:0px;">';
 	//str += '<div style="padding:40px 0 15px 0;"><img src="./img/head-2.png" style="height:45px;"></div>';
-	str += '<div class="bg-timetojoin"><div style="width:100%;padding:10px 50px;">'+ sText +'</div>';
+	str += '<div class="bg-timetojoin"><div style="width:100%;padding:10px 40px;">'+ sText +'</div>';
 	str += '<div class="clr" style="height:20px;"></div><div class="bg-timetojointext2">สำเร็จแล้ว '+ sNumber.toFixed(2) +'%</div>';
 	//str += '<div style="color:#fff;">แฟนพันธุ์แท้ WOW</div>';
 	str += '</div></div></center>';
