@@ -1,0 +1,23 @@
+.progress-bar {
+    width: 94%;
+    margin: 7px 0 0 3%;
+    background-color: #ddd;
+    border-radius: 6px;
+    height: 5px;
+    position: relative;
+}
+.progress {
+    width: 0;
+    border-radius: 6px;
+    height: 5px;
+    text-align: right;
+    position: absolute;
+}
+.progress span {
+    font-size: 14px;
+    display: inline-block;
+    position: absolute;
+    top: 0px;
+    right: 10px;
+    color: white;
+}
