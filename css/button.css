@@ -474,9 +474,9 @@ input[type="radio"]:checked + label:after {
     margin-top:10px;
     border-radius: 25px;
     transition: all .3s;
-    border: solid #2bda02 1px;
+    border: solid #26b505 1px;
     padding: 4px 20px;
-    background-color: #2bda02;
+    background-color: #26b505;
     color: #ffffff;
     font-size: 12px;
     cursor: pointer;
@@ -485,8 +485,8 @@ input[type="radio"]:checked + label:after {
 }
 
 .btn-t4:focus, .btn-t4:hover, a.btn-t4:focus, a.btn-t4:hover {
-    border: solid #22ad01 1px;
-    background-color: #22ad01;
+    border: solid #176c03 1px;
+    background-color: #176c03;
     -webkit-transition: all .3s;
     transition: all .3s;
     color: #fff;
@@ -514,9 +514,9 @@ input[type="radio"]:checked + label:after {
     justify-content: center;
     border-radius: 25px;
     transition: all .3s;
-    border: solid #2bda02 1px;
+    border: solid #c50404 1px;
     padding: 4px 20px;
-    background-color: #2bda02;
+    background-color: #c50404;
     color: #ffffff;
     font-size: 12px;
     cursor: pointer;
