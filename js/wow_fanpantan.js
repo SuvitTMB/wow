@@ -110,6 +110,7 @@ function AddNewWOWPoint() {
       EmpName : sessionStorage.getItem("EmpName"),
       WOWScore : 0,
       WOWGame1 : 0,
+      WOWGame1Check : 0,
       WOWGame2 : 0,
 	  ShowWOW11 : sSpace,
 	  ShowIMG11 : sSpace,
@@ -437,7 +438,3 @@ function checkZero(data){
   }
   return data;
 }
-
-//function numberWithCommas(x) {
-//    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//}
