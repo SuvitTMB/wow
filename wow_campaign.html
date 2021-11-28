@@ -72,6 +72,7 @@
         <center>
           <div style="font-size: 15px; color:#0056ff; font-weight: 600;">ภารกิจพิชิต WOW</div>
           <div id="team" style="font-size: 13px; color:#f68b1f;font-weight: 600;">มาร่วมกิจกรรมภารกิจพิชิต WOW กัน</div>
+    	  <div id="btn-1" class="btn-t2" onclick="Howtoplay()">กติกา/เงื่อนไข</div>
           <div style="max-width:390px; width:90%; margin:0px auto;">
             <div style="padding:10px;">
               <div><img src="./img/ttbWOW_logo_23Mar21-01.png" width="100%"></div>
@@ -164,7 +165,7 @@
   </main>
   <div class="clr" style="height: 10px;"></div>
   <center>
-    <div id="btn-1" class="btn-t2" onclick="Howtoplay()">กติกา/เงื่อนไข</div>
+    <div id="btn-1" class="btn-t3" onclick="Email()">แจ้งปัญหาการใช้งาน</div>
     <div id="btn-1" class="btn-t1" onclick="window.location.href='wow.html';">กลับหน้าแรก</div>
     <div style="margin-top:30px;font-size:10px;color:#555555;margin-bottom: 20px;font-weight: 700;">@LINE Retail Socitey</div>
   </center>
@@ -229,10 +230,10 @@
                   <center>
                     <div class="font-black">1. คุณเคยมีประสบการณ์แลก WOW มาก่อนหรือไม่ <font color="#ff0000">*</font></div>
                     <div style="margin-top:0px;">
-                      <input type="radio" id="wow_yes" name="WOWexp" value="1">
-                      <label for="wow_yes" style="padding:5px 0px 5px 30px;" onclick="Click2()">เคยแลกมาแล้ว</label>
-                      <input type="radio" id="wow_no" name="WOWexp" value="0">
-                      <label for="wow_no" style="padding:5px 0px 5px 30px;" onclick="Click2()">ยังไม่เคยแลกนะ</label>
+                      <input type="radio" id="wow_yes" name="WOWexp" value="1">
+                      <label for="wow_yes" style="padding:5px 0px 5px 30px;" onclick="Click2()">เคยแลกมาแล้ว</label>
+                      <input type="radio" id="wow_no" name="WOWexp" value="0">
+                      <label for="wow_no" style="padding:5px 0px 5px 30px;" onclick="Click2()">ยังไม่เคยแลกนะ</label>
                     </div>
                     <div id="ShowUpload2" style="display: none;">
                       <hr>
@@ -273,10 +274,10 @@
                   <center>
                     <div class="font-black">1. คุณเคยแชร์ประสบการณ์แลก WOW ของคุณ<br>บน Facebook มาก่อนหรือไม่ <font color="#ff0000">*</font></div>
                     <div style="margin-top:0px;">
-                      <input type="radio" id="fb_yes" name="WOWfb" value="1">
-                      <label for="fb_yes" style="padding:5px 0px 5px 30px;" onclick="Click3()">เคยแชร์มาแล้ว</label>
-                      <input type="radio" id="fb_no" name="WOWfb" value="0">
-                      <label for="fb_no" style="padding:5px 0px 5px 30px;" onclick="Click3()">ยังไม่เคยแชร์นะ</label>
+                      <input type="radio" id="fb_yes" name="WOWfb" value="1">
+                      <label for="fb_yes" style="padding:5px 0px 5px 30px;" onclick="Click3()">เคยแชร์มาแล้ว</label>
+                      <input type="radio" id="fb_no" name="WOWfb" value="0">
+                      <label for="fb_no" style="padding:5px 0px 5px 30px;" onclick="Click3()">ยังไม่เคยแชร์นะ</label>
                     </div>
                     <div id="ShowUpload3" style="display: none;">
                       <hr>
@@ -317,21 +318,21 @@
                   <center>
                     <div class="font-black">1. คุณเคยแชร์เรื่องราวของ ttb<br>บน Facebook มาก่อนหรือไม่ <font color="#ff0000">*</font></div>
                     <div style="margin-top:0px;">
-                      <input type="radio" id="share_yes" name="fbshare" value="1">
-                      <label for="share_yes" style="padding:5px 0px 5px 30px;" onclick="Click4()">เคยแชร์มาแล้ว</label>
-                      <input type="radio" id="share_no" name="fbshare" value="0">
-                      <label for="share_no" style="padding:5px 0px 5px 30px;" onclick="Click4()">ยังไม่เคยแชร์นะ</label>
+                      <input type="radio" id="share_yes" name="fbshare" value="1">
+                      <label for="share_yes" style="padding:5px 0px 5px 30px;" onclick="Click4()">เคยแชร์มาแล้ว</label>
+                      <input type="radio" id="share_no" name="fbshare" value="0">
+                      <label for="share_no" style="padding:5px 0px 5px 30px;" onclick="Click4()">ยังไม่เคยแชร์นะ</label>
                     </div>
                     <div id="ShowUpload4" style="display: none;">
                     <hr>
                     <div class="font-black">2. เราอยากให้คุณได้แชร์เรื่องราวของ ttb<br>บน Facebook ตามลิงก์ด้านล่างนี้</div>
                     <div class="clr"></div>
                     <div style="margin-top:10px;line-height: 1.4;text-align: left;padding-left:30px;">
-                      1. ภาพยนตร์โฆษณา คลิก<br>
-                      2. ภาพยนตร์โฆษณา คลิก<br>
-                      3. ภาพยนตร์โฆษณา คลิก<br>
-                      4. ภาพยนตร์โฆษณา คลิก<br>
-                      5. ภาพยนตร์โฆษณา คลิก<br>
+                      1. ภาพยนตร์โฆษณา คลิก<br>
+                      2. ภาพยนตร์โฆษณา คลิก<br>
+                      3. ภาพยนตร์โฆษณา คลิก<br>
+                      4. ภาพยนตร์โฆษณา คลิก<br>
+                      5. ภาพยนตร์โฆษณา คลิก<br>
                     </div>
 
                       <div class="font-black" style="margin-top:10px;">3. แคปหน้าจอมาให้เราดู (โหลดภาพ) <font color="#ff0000">*</font></div>
@@ -420,7 +421,29 @@
     <div style="height:20px;"></div>
   </div>
 
+  <div id="Email" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #dce5f6;">
+      <center>
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;max-width: 360px;">
+          <div class="header-line" style="margin:10px;color:#0056ff;font-weight: 600;">แจ้งปัญหาการใช้งาน</div>
+          <div><img src="./img/email.png" style="padding-top:8px;width:200px;border-radius: 15px;"></div>
+          <div style="text-align: left; padding:10px;font-size: 12px; color:#0056ff;">กรณีพบปัญหาการใข้งาน หรือต้องการความช่วยเหลือขอให้ทำการส่งแจ้งข้อมูลผ่าน Email ด้านล่างนี้เพื่อที่จะทำการแก้ไขต่อไป และขอให้ผู้ที่แจ้งทำการแจ้งข้อมูลชื่อ LINE รหัสพนักงาน และชื่อพนักงานเข้ามาด้วยนะครับ</div>
+          <div class="btn-t1" style="width:250px;" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=แจ้งปัญหาการใช้งาน LINE Retail Socitey'">แจ้งปัญหาการใช้งาน<br>LINE Retail Socitey</div>
+          <div class="btn-t1" style="width:250px;" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=แจ้งปัญหาภารกิจภารกิจพิชิต WOW'">แจ้งปัญหาเกี่ยวกับ<br>ภารกิจพิชิต WOW</div>
+          <div class="btn-t1" style="width:250px;" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=แจ้งปัญหาภารกิจแฟนพันธุ์แท้'">แจ้งปัญหาเกี่ยวกับ<br>ภารกิจแฟนพันธุ์แท้</div>
+
+          <div id="DisplayEmail"></div>
+          <!--<div class="btn-t2" onclick="window.location='mybadges.html';" style="margin-top:20px;">ดูเหรียญรางวัล5</div>-->
+          <div class="clr" style="height: :20px;"></div>
+          <div class="btn-t2" onclick="CloseAll()">ปิดหน้านี้</div>
+          <div style="height: 15px;"></div>
+        </center>
+      </div>
+	  </center>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
+
   <script src="./js/wow_campaign.js"></script>
 </body>
 </html>
-<!--https://www.naishare.com/blog/how-to-upload-files-to-firebase-cloud-storage-using-javascript-->
