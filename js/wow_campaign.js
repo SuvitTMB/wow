@@ -45,7 +45,7 @@ function LoadFirebase() {
 	dbBadgeUser = firebase.firestore().collection("BadgeUser");
 }
 
-
+var sWOWGame1Check = 0;
 var CheckPoint = 0;
 var WOWPoint = 200;
 function LoadProfile() {
@@ -65,6 +65,7 @@ function LoadProfile() {
 		sShowIMG33 = doc.data().ShowIMG33; 
 		sShowWOW44 = doc.data().ShowWOW44; 
 		sShowIMG44 = doc.data().ShowIMG44; 
+		sWOWGame1Check = doc.data().WOWGame1Check;
 
 		CheckPoint = 0;
 		if(sShowIMG11 != "") {
@@ -113,7 +114,15 @@ function LoadProfile() {
 				});
 			}
 			*/
+			if(sWOWGame1Check==1) {
+				$("#CheckConfirmMission").html('<div class="btn-t4">สถานะ : ผ่านการตรวจสอบแล้ว</div>'); 
+			} else {
+				$("#CheckConfirmMission").html('<div class="btn-t5">สถานะ : อยู่ระหว่างการตรวจสอบข้อมูล</div>'); 
+			}
+
 			$("#WOW5").html('<div class="box-wow-number">'+WOWPoint+'</div>'); 
+
+
 		} else {
 			$("#WOW5").html('<div class="box-wow-number1">'+WOWPoint+'</div>'); 
 		}
@@ -152,7 +161,6 @@ function CheckGetBadge() {
   }); 
 }
 
-
 var CheckBadge = 0;
 var sBadgeTime = 0;
 var sBadgeTrue = 0;
@@ -172,8 +180,6 @@ function CheckGetBadgeUser() {
       CheckBadge = 1;
       EidBadgeGameUser = doc.id;
       sBadgeTime = doc.data().BadgeTime;
-      //sBadgeTrue = doc.data().BadgeTrue;
-      //sBadgeFalse = doc.data().BadgeFalse;
       sBadgeEnd = doc.data().BadgeEnd;
     });
       //alert("BadgeTime="+sBadgeTime+" ||| BadgeTarget="+sBadgeTarget);
@@ -650,8 +656,8 @@ function Howtoplay() {
 
 
 function Email() {
-	var str = "";
-	$("#DisplayEmail").html(str); 
+	//var str = "";
+	//$("#DisplayEmail").html(str); 
   	document.getElementById('Email').style.display='block';
 }
 

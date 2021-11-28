@@ -88,6 +88,17 @@ function AddNewWOWPoint() {
     LoadProfile();
 }
 
+function Email() {
+  //var str = "";
+  //$("#DisplayEmail").html(str); 
+    document.getElementById('Email').style.display='block';
+}
+
+
+function CloseAll() {
+    document.getElementById('Email').style.display='none';
+}
+
 
 function NewDate() {
   var today = new Date();
