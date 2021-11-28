@@ -75,6 +75,7 @@ function AddNewWOWPoint() {
     ShowIMG33 : sSpace,
     ShowWOW44 : sSpace,
     ShowIMG44 : sSpace,
+    WOWGame1Check : 0,
     UserSumTrue : 0,
     UserSumFalse : 0,
     UserSumQuiz : 0,
