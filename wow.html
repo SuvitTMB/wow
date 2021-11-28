@@ -136,54 +136,6 @@
                     </div>
                     <div class="clr"></div>
 
-
-<!--
-                    <div class="transfer-wow">
-                      <div class="transfer-wow-header"><u>ภารกิจที่ 1</u> : ภารกิจพิชิต WOW</div>
-                      <div class="w3-row" style="margin-top:12px;">
-                        <div>
-                          <div class="w3-col" style="width:60%;text-align: center;">
-                            <img src="./img/ttbWOW.png" width="70%">
-                          </div>
-                          <div class="w3-col" style="width:40%;padding-left: 8px;">
-                            <div class="button-one" onclick="window.location.href='wow_fanpantan.html'">เข้าร่วมภารกิจ<br>พิชิต 200 WOW<br>คลิกเลย</div>
-                          </div>
-                        </div>
-                        <div class="clr"></div>
-                        <div class="font12-blue-1">กิจกรรมมุ่งเน้นให้พนักงานมีประสบการณ์ในการเข้าใช้งาน ttb touch รู้ถึงการได้รับ ttb WOW และวิธีการแลกรางวัลจาก WOW ตลอดจนการบอกต่อให้เพื่อน ๆ และลูกค้าของเราได้รับประสบการณ์นี้ด้วยกัน</div>
-                      </div>
-                      <div class="clr" style="height: 5px;"></div>
-                    </div>
-
-
-
-                    <div class="transfer-wow" style="margin-top:50px;">
-                      <div class="transfer-wow-header"><u>ภารกิจที่ 2</u> : แฟนพันธุ์แท้ WOW</div>
-                      <div class="w3-row" style="margin-top:12px;">
-                        <div>
-                          <div class="w3-col" style="width:60%;text-align: center;">
-                            <img src="./img/fanpantan_wow@.png" width="70%">
-                          </div>
-                          <div class="w3-col" style="width:40%;padding-left: 8px;">
-                            <div class="button-one" onclick="window.location.href='wow_fanpantan.html'">เข้าร่วม<br>สะสม WOW รายวัน<br>คลิกเลย</div>
-                          </div>
-                        </div>
-                        <div class="clr"></div>
-                        <div class="font12-blue-1">กิจกรรมที่จะใช้ทดสอบความรู้ ความเข้าใจเกี่ยวกับการใช้งาน ttb WOW ของพนักงาน มีความรู้ที่มากพอในการส่งมอบประสบการณ์ที่ดีให้กับลูกค้าของเราได้มากน้อยแค่ไหน ทำการสะสม WOW ได้ถึงวันที่ 30 ธันวาคม นี้</div>
-                      </div>
-                      <div class="clr" style="height: 5px;"></div>
-                    </div>
--->
-
-<!--
-
-                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_campaign.html'" style="width:46%;height: 130px;margin-right: 4%">
-                      <div><img src="./img/icon-5.png" style="padding:8px 0 0 0;height: 100px;"><br>ภารกิจพิชิต WOW</div>
-                    </div>
-                    <div class="col-xs-6 boxmenu" onclick="window.location.href='wow_fanpantan.html'" style="width:46%;height: 130px;">
-                      <div><img src="./img/icon-5.png" style="padding:8px 0 0 0;height: 100px;"><br>ภารกิจแฟนพันธุ์แท้ WOW</div>
-                    </div>
--->
                   </div>
                   <div class="clr"></div>
                 </center>
@@ -196,11 +148,35 @@
     </section>
 
 
+
     <center>
-      <div style="margin-top:10px;font-size:10px;color:#555555;margin-bottom: 20px;font-weight: 700;">@LINE Retail Socitey</div>
+      <div id="btn-1" class="btn-t3" onclick="Email()">แจ้งปัญหาการใช้งาน</div>
+      <div style="margin-top:25px;font-size:10px;color:#555555;margin-bottom: 20px;font-weight: 700;">@LINE Retail Socitey</div>
       <div><div id="isLoggedIn" style="color:#ffffff;"></div><div id="userId" style="color:#ffffff;"></div></div>
     </center>
   </main>
+  </div>
+  <div id="Email" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #dce5f6;">
+      <center>
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;max-width: 360px;">
+          <div class="header-line" style="margin:10px;color:#0056ff;font-weight: 600;">แจ้งปัญหาการใช้งาน</div>
+          <div><img src="./img/email.png" style="padding-top:8px;width:200px;border-radius: 15px;"></div>
+          <div style="text-align: left; padding:10px;font-size: 12px; color:#0056ff;">กรณีพบปัญหาการใข้งาน หรือต้องการความช่วยเหลือขอให้ทำการส่งแจ้งข้อมูลผ่าน Email ด้านล่างนี้เพื่อที่จะทำการแก้ไขต่อไป และขอให้ผู้ที่แจ้งทำการแจ้งข้อมูลชื่อ LINE รหัสพนักงาน และชื่อพนักงานเข้ามาด้วยนะครับ</div>
+          <div class="btn-t1" style="width:250px;" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=แจ้งปัญหาการใช้งาน LINE Retail Socitey'">แจ้งปัญหาการใช้งาน<br>LINE Retail Socitey</div>
+          <div class="btn-t1" style="width:250px;" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=แจ้งปัญหาภารกิจภารกิจพิชิต WOW'">แจ้งปัญหาเกี่ยวกับ<br>ภารกิจพิชิต WOW</div>
+          <div class="btn-t1" style="width:250px;" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=แจ้งปัญหาภารกิจแฟนพันธุ์แท้'">แจ้งปัญหาเกี่ยวกับ<br>ภารกิจแฟนพันธุ์แท้</div>
+
+          <div id="DisplayEmail"></div>
+          <!--<div class="btn-t2" onclick="window.location='mybadges.html';" style="margin-top:20px;">ดูเหรียญรางวัล5</div>-->
+          <div class="clr" style="height: :20px;"></div>
+          <div class="btn-t2" onclick="CloseAll()">ปิดหน้านี้</div>
+          <div style="height: 15px;"></div>
+        </center>
+      </div>
+    </center>
+    </div>
+    <div style="height:20px;"></div>
   </div>
 
 <script src="./js/wow.js"></script>
