@@ -52,7 +52,7 @@ function DisplayLeaderBoard() {
   //.orderBy("WOWGame2", "Desc").orderBy("TimeGetGame2", "Desc")
   .orderBy('WOWGame2','desc')
   .orderBy('TimeGetGame2','asc')
-  .limit(20).get().then((snapshot)=> {
+  .limit(50).get().then((snapshot)=> {
     snapshot.forEach(doc=> {
     	//console.log(doc.data());
     	i = i+1;
