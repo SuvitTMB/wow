@@ -649,7 +649,11 @@ function Howtoplay() {
 }
 
 
-
+function Email() {
+	var str = "";
+	$("#DisplayEmail").html(str); 
+  	document.getElementById('Email').style.display='block';
+}
 
 
 function CloseAll() {
@@ -661,6 +665,7 @@ function CloseAll() {
   	document.getElementById('id06').style.display='none';
   	document.getElementById('id07').style.display='none';
   	document.getElementById('id08').style.display='none';
+  	document.getElementById('Email').style.display='none';
 }
 
 
@@ -696,7 +701,3 @@ function checkZero(data){
   }
   return data;
 }
-
-//function numberWithCommas(x) {
-//    return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
-//}
