@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <!-- Theme Made By www.w3schools.com -->
+  <title>LINE Retail Society</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <!-- Google Tag Manager -->
+  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+  })(window,document,'script','dataLayer','GTM-PW7HPDW');</script>
+  <!-- End Google Tag Manager -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat" rel="stylesheet" type="text/css">
+  <link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet" type="text/css">
+  <link href='css/ekachon.css' rel="stylesheet" type="text/css">
+  <link href='css/style.css' rel="stylesheet" type="text/css">
+  <link href='css/button.css' rel="stylesheet" type="text/css">
+  <link href='css/app.css' rel="stylesheet" type="text/css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+  <link href='css/w3.css' rel="stylesheet" type="text/css">
+
+  <link rel='stylesheet' href='https://cdn.datatables.net/1.10.12/css/jquery.dataTables.min.css'>
+  <link rel='stylesheet' href='https://cdn.datatables.net/buttons/1.2.2/css/buttons.dataTables.min.css'>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.5.0/firebase-firestore.js"></script>
+  <!--<script src="./js/progress-bar.js"></script>-->
+
+    <style type="text/css">
+        table.dataTable tbody th, table.dataTable tbody td {
+            padding: 2px 6px; 
+            /*vertical-align: top;*/
+        }
+        table.dataTable thead th, table.dataTable thead td {
+            background: #f68b1f; color: #ffffff; padding: 4px; margin-top:15px;
+        }
+        .dataTables_wrapper .dataTables_length, .dataTables_wrapper .dataTables_filter, .dataTables_wrapper .dataTables_info, .dataTables_wrapper .dataTables_processing, .dataTables_wrapper .dataTables_paginate { 
+            margin-bottom: 10px; 
+        }
+        .txt-center { text-align: center; }
+        .txt-right { text-align: right; right: 10px; }
+        .a { width:10px; text-align: center;}
+        .b { height:10px; text-align: center;}
+        .table.dataTable.stripe tbody tr.odd, table.dataTable.display tbody tr.odd { 
+          cursor: pointer; 
+        }
+        .table.dataTable.display tbody tr.odd>.sorting_1, table.dataTable.order-column.stripe tbody tr.odd>.sorting_1 {
+          background-color: #0056ff; color:#ffffff;
+        }
+        .table.dataTable tbody tr {
+          background:#ff0000; 
+        }
+        .table.dataTable tbody tr { 
+          cursor: pointer; 
+        }
+        .btn-add {
+          max-width:50px !important; padding:2px 5px; font-size: 11px; margin-top:0px;
+          min-width: 50px;
+        }
+    </style>
+</head>
+<body id="myPage" data-spy="scroll" data-target=".navbar" data-offset="60" style="background-color: #ffffff;">
+  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-PW7HPDW"
+  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+
+<!--
+<div class="navbar1">
+  <center><div class="btn-t2" onclick="location.href='intro.html'">กลับไปหน้าแรก</div></center>#0016ed
+</div>
+-->
+
+  <nav class="navbar navbar-default navbar-fixed-top">
+    <div class="container">
+      <div class="navbar-header">
+        <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>
+          <span class="icon-bar"></span>                        
+        </button>
+        <a class="navbar-brand" href="index.html">Retail Society</a>
+      </div>
+      <div class="collapse navbar-collapse" id="myNavbar">
+        <ul class="nav navbar-nav navbar-right">
+          <li><a href="wow.html">หน้าแรก</a></li>
+          <li><a href="youknowwow.html">รู้จัก WOW ให้มากขึ้น</a></li>
+          <li><a href="wow_campaign.html">ภารกิจพิชิต WOW</a></li>
+          <li><a href="wow_fanpantan.html">แฟนพันธุ์แท้ WOW</a></li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <center>
+  <div class="row" style="margin:70px auto 0 auto; width:100%;">
+    <div style="font-size: 15px; color:#0056ff; font-weight: 600;">ตารางผู้เข้าร่วมการแข่งขัน</div>
+    <div id="team" style="font-size: 13px; color:#f68b1f;font-weight: 600;">ภารกิจพิชิต WOW</div>
+
+      <div id="loading" style="margin:30px 30px;text-align: center;">
+        <img src="./img/loading.gif" style="width:50px;">
+      </div>
+
+      <div style="width:390px; margin:0 auto;">
+        <table id="ex-table" class="display nowrap" style="width:100%;font-size: 11px;color:#444444;">
+          <thead>
+            <tr>
+              <th>รูป</th>
+              <th>Line Name</th>
+              <th>ID</th>
+              <th>ชื่อ-นามสกุล</th>
+              <th>สังกัด</th>
+              <th>สังกัด</th>
+            </tr>
+          </thead>
+        </table>
+      </div>
+    </div>
+  </div>
+
+
+  <div class="clr" style="height: 20px;"></div>
+  <div class="btn-t2" onclick="location.href='wow_fanpantan.html'">แฟนพันธุ์แท้ WOW</div>
+  <div class="btn-t1" onclick="location.href='wow.html'">กลับไปเมนูหลัก</div>
+  <div style="height: 30px;"></div>
+  </center>
+
+
+<div id="id01" class="w3-modal w3-animate-opacity">
+  <div class="w3-modal-content w3-card-4">
+    <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;">
+        <div id="DisplayByItem"></div>
+        <!--<div class="btn-t2" onclick="CloseAll()">ปิดหน้าต่าง</div>-->
+      </center>
+    </div>
+  </div>
+</div>
+<!--
+  <script>
+      $(document).ready(function(){
+          $(".progress-bar").ProgressBar();
+      });
+  </script>
+-->
+<script src='https://code.jquery.com/jquery-1.12.3.js'></script>
+<script src='https://cdn.datatables.net/1.10.12/js/jquery.dataTables.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/dataTables.buttons.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.flash.min.js'></script>
+<script src='https://cdnjs.cloudflare.com/ajax/libs/jszip/2.5.0/jszip.min.js'></script>
+<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/pdfmake.min.js'></script>
+<script src='https://cdn.rawgit.com/bpampuch/pdfmake/0.1.18/build/vfs_fonts.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.html5.min.js'></script>
+<script src='https://cdn.datatables.net/buttons/1.2.2/js/buttons.print.min.js'></script>
+
+  <script src="./js/player.js"></script>
+</body>
+</html>

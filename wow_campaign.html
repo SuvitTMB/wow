@@ -72,7 +72,6 @@
         <center>
           <div style="font-size: 15px; color:#0056ff; font-weight: 600;">ภารกิจพิชิต WOW</div>
           <div id="team" style="font-size: 13px; color:#f68b1f;font-weight: 600;">มาร่วมกิจกรรมภารกิจพิชิต WOW กัน</div>
-    	  <div id="btn-1" class="btn-t2" onclick="Howtoplay()">กติกา/เงื่อนไข</div>
           <div style="max-width:390px; width:90%; margin:0px auto;">
             <div style="padding:10px;">
               <div><img src="./img/ttbWOW_logo_23Mar21-01.png" width="100%"></div>
@@ -165,6 +164,11 @@
     </section>
   </main>
   <div class="clr" style="height: 10px;"></div>
+  <center>
+    <div id="btn-1" class="btn-t2" onclick="Howtoplay()">กติกา/เงื่อนไข</div>
+    <div id="btn-1" class="btn-t5" onclick="NotLoadImg()">กรณีโหลดรูปภาพไม่ได้</div>
+  </center>
+
   <center>
     <div id="btn-1" class="btn-t3" onclick="Email()">แจ้งปัญหาการใช้งาน</div>
     <div id="btn-1" class="btn-t1" onclick="window.location.href='wow.html';">กลับหน้าแรก</div>
@@ -441,6 +445,38 @@
         </center>
       </div>
 	  </center>
+    </div>
+    <div style="height:20px;"></div>
+  </div>
+
+
+  <div id="NotLoadImg" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #dce5f6;">
+      <center>
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;max-width: 360px;">
+          <div class="header-line" style="margin:10px;color:#0056ff;font-weight: 600;">กรณีโหลดรูปภาพไม่ได้</div>
+          <div><img src="./img/leader-8.png" style="padding-top:8px;width:100px;border-radius: 15px;"></div>
+          <div style="text-align: left; padding:20px 10px;font-size: 12px; color:#000000;">กรณีโหลดรูปภาพไม่ได้ ให้ทำการคลิก <b>แจ้งเข้าร่วมกิจกรรม ในภารกิจพิชิต WOW</b> ที่ลิงก์ด้านล่าง โดยขอให้ผู้ที่ส่ง Email ทำการแจ้วข้อมูลดั้งนี้<br><br>
+            <ul>
+              <li>แจ้งชื่อ LINE Name, รหัสพนักงาน, และชื่อ-นามสกุลของพนักงาน </li>
+              <li>ตอบคำถาม 4 ข้อ</li>
+              <li>(1) <b>บอกเราหน่อยว่าคุณมีจำนวน WOW เท่าไร?</b> (ระบุจำนวน WOW ที่มี)</li>
+              <li>(2) <b>คุณเคยมีประสบการณ์แลก WOW มาก่อนหรือไม่?</b> (เคยแลกมาแล้ว / ยังไม่เคยแลกนะ)</li>
+              <li>(3) <b>คุณเคยแชร์ประสบการณ์แลก WOW ของคุณบน Facebook มาก่อนหรือไม่?</b> (เคยแลกมาแล้ว / ยังไม่เคยแลกนะ)</li>
+              <li>(4) <b>คุณเคยแชร์เรื่องราวของ ttb บน Facebook มาก่อนหรือไม่?</b> (เคยแลกมาแล้ว / ยังไม่เคยแลกนะ)</li>
+              <li>จากนั้นให้ทำการโหลดภาพทั้ง 4 หัวข้อไปที่ Email ด้านล่างนะครับ</li>
+              <li>รอติดตามผลคะแนนในระบบการแข่งขันต่อไปครับ</li>
+            </ul></div>
+          <div class="btn-t1" style="width:250px;" onclick="window.location.href='mailto: suvit.cha@ttbbank.com?subject=แจ้งปัญหาภารกิจภารกิจพิชิต WOW'">แจ้งเข้าร่วมกิจกรรม<br>ในภารกิจพิชิต WOW</div>
+
+          <div id="DisplayEmail"></div>
+          <!--<div class="btn-t2" onclick="window.location='mybadges.html';" style="margin-top:20px;">ดูเหรียญรางวัล5</div>-->
+          <div class="clr" style="height: :20px;"></div>
+          <div class="btn-t2" onclick="CloseAll()">ปิดหน้านี้</div>
+          <div style="height: 15px;"></div>
+        </center>
+      </div>
+    </center>
     </div>
     <div style="height:20px;"></div>
   </div>
