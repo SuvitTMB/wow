@@ -662,6 +662,11 @@ function Email() {
 }
 
 
+function NotLoadImg() {
+  	document.getElementById('NotLoadImg').style.display='block';
+}
+
+
 function CloseAll() {
   	document.getElementById('id01').style.display='none';
   	document.getElementById('id02').style.display='none';
@@ -672,6 +677,7 @@ function CloseAll() {
   	document.getElementById('id07').style.display='none';
   	document.getElementById('id08').style.display='none';
   	document.getElementById('Email').style.display='none';
+  	document.getElementById('NotLoadImg').style.display='none';
 }
 
 
