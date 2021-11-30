@@ -67,20 +67,20 @@
           <div style="padding:15px 0px 15px 0px;">
             <center>
               <div style="margin-top:10px;font-size: 15px;color:#0056ff;line-height: 1.4;font-weight: 600;">LINE Retail Society<br>ชวนคุณเข้าร่วมภารกิจพิชิต WOW</div>
-              <div style="padding:20px 20px; font-weight: 600; color:#f68b1f;"><b>LINE Retail Society</b> ชวนคุณร่วม WOW กับเราตลอดเดือนธันวาคมด้วยกิจกรรมที่ลับเฉพาะสำหรับคุณ เราจะมาเรียบรู้ประสบการณ์การได้รับ WOW, การใช้ WOW เพื่อแลกของรางวัล พร้อมกับการแชร์ประสบการณ์ WOW ให้กับลูกค้าของเรา กับ 2 ภารกิจที่คุณจะพลาดไม่ได้แม้แต่วันเดียว ...</div>
+              <div style="padding:20px 20px; font-weight: 600; color:#f68b1f;"><b>LINE Retail Society</b> ชวนคุณร่วม WOW กับเราระหว่างวันที่ 1-15 ธันวาคมนี้ ด้วยกิจกรรมที่ลับเฉพาะสำหรับคุณ เราจะมาเรียบรู้ประสบการณ์การได้รับ WOW, การใช้ WOW เพื่อแลกของรางวัล พร้อมกับการแชร์ประสบการณ์ WOW ให้กับลูกค้าของเรา กับ 2 ภารกิจที่คุณจะพลาดไม่ได้แม้แต่วันเดียว ...</div>
 
               <div style="max-width:390px; width:70%; margin:0px auto;">
               <div style="margin-top:10px;"><img id="pictureUrl" class="imgprofile"></div>
               <div style="color:#0056ff;font-weight: 600; font-size:16px;padding:10px;"><p id="displayName"></p></div>
                 <div style="width:100%; margin: auto;">
-                  <div class="box-Game"><div style="font-size: 11px;">ภารกิจที่ 1</div>
+                  <div class="box-Game"><div style="font-size: 11px;">พิชิต WOW</div>
                   <div id="ShowWOWGame1"></div>
                   <div class="box-wow-number3">WOW</div></div>
-                  <div class="box-Game"><div style="font-size: 11px;">ภารกิจที่ 2</div>
+                  <div class="box-Game"><div style="font-size: 11px;">แฟนพันธุ์แท้</div>
                   <div id="ShowWOWGame2"></div>
                   <div class="box-wow-number3">WOW</div></div>
                   <div class="box-Game" style="background-color: #fae0c7;">
-                  <div style="font-size: 11px;">คะแนน WOW</div>
+                  <div style="font-size: 11px;">WOW สะสม</div>
                   <div id="ShowWOWScore"></div>
                   <div class="box-wow-number3">WOW</div></div>
                 </div>
@@ -109,7 +109,8 @@
                 <div class="container-max">
                   <center>
                   <div style="margin-top:40px;font-size: 15px;color:#0056ff;line-height: 1.4;font-weight: 600;">2 ภารกิจพิชิต WOW</div>
-                  <div style="max-width:390px; width:100%; margin-top:-10px;padding-top:20px;">
+                  <div id="btn-1" class="btn-t4" onclick="ShowWOWid()">กรุณาแจ้ง WOW id เพื่อไว้รับรางวัล</div>
+                  <div style="max-width:390px; width:100%; margin-top:10px;">
                     <div>
                       <div class="w3-col" style="width:50%;">
                         <div class="transfer-wow">
@@ -150,9 +151,6 @@
                   <div class="box-Leader" onclick="window.location.href='howtoplay.html';"><img src="./img/leader-7.png" width="70%"><br>เกี่ยวกับ<br>กิจกรรม</div>
                 </div>
               </div>
-
-
-
             </center>
           </div>
         </div>
@@ -162,9 +160,9 @@
 
     <div class="clr" style="height: 30px;"></div>
     <center>
+      <!--<div><div id="isLoggedIn" style="color:#ffffff;"></div><div id="userId" style="color:#ffffff;"></div></div>-->
       <div id="btn-1" class="btn-t3" onclick="Email()">แจ้งปัญหาการใช้งาน</div>
       <div style="margin-top:25px;font-size:10px;color:#555555;margin-bottom: 10px;font-weight: 700;">@LINE Retail Socitey</div>
-      <div><div id="isLoggedIn" style="color:#ffffff;"></div><div id="userId" style="color:#ffffff;"></div></div>
     </center>
   </main>
   </div>
@@ -189,6 +187,33 @@
     </center>
     </div>
     <div style="height:20px;"></div>
+  </div>
+
+
+  <div id="ShowWOWid" class="w3-modal w3-animate-opacity">
+    <div class="w3-modal-content w3-card-4" style="background: #dce5f6;">
+      <center>
+      <div class="w3-container" style="min-height:300px;padding:24px;width:100%;text-align:center;max-width: 360px;">
+          <div class="header-line" style="margin:10px;color:#0056ff;font-weight: 600;">แจ้ง WOW id ของคุณ</div>
+          <div class="transfer-wow" style="width:100%;margin-top:15px;">
+            <center>
+              <div style="color:#0056ff;"><input type="text" id="wowid" placeholder="ระบุ WOW-id?" style="width:100px;text-align:center;"></div>
+              <div style="font-size: 10px; color:#000000;margin-top:-5px;">กรุณาระบุ WOW id ของคุณสำหรับรับรางวัล</div>
+              <div class="btn-t2" onclick="ClickSaveWOWid()" style="margin-top:20px;">บันทึกรายการ</div>
+            </center>
+          </div>
+          <div class="clr"></div>
+          <div>
+            <div>WOW id ดูได้จากตรงไหน?</div>
+            <div style="margin-top:15px;"><img src="./img/wowid.jpg" width="100%"></div>
+          </div>
+          <div class="clr" style="height: :30px;"></div>
+          <div class="btn-t2" onclick="CloseAll()">ปิดหน้านี้</div>
+          <div style="height: 15px;"></div>
+        </center>
+      </div>
+    </div>
+    </center>
   </div>
 
 <script src="./js/wow.js"></script>
