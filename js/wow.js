@@ -1,6 +1,6 @@
 var firebaseConfig, dateString;
 var EidWOWScore = "";
-
+var sWOWid = "";
 
 $(document).ready(function () {
   if(sessionStorage.getItem("LineID")==null) { location.href = "index.html"; }
@@ -31,6 +31,7 @@ function LoadProfile() {
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
       EidWOWScore = doc.id;
+      sWOWid = doc.data().WOWid;
       sWOWScore = doc.data().WOWScore;
       sWOWGame1 = doc.data().WOWGame1;
       sWOWGame2 = doc.data().WOWGame2;
@@ -42,6 +43,10 @@ function LoadProfile() {
       sShowIMG33 = doc.data().ShowIMG33; 
       sShowWOW44 = doc.data().ShowWOW44; 
       sShowIMG44 = doc.data().ShowIMG44; 
+      document.getElementById("wowid").value = doc.data().WOWid;
+
+      //alert(sWOWid);
+      $("#wowid").html(sWOWid); 
       $("#ShowWOWGame1").html('<div class="box-wow-number2">'+sWOWGame1+'</div>'); 
       $("#ShowWOWGame2").html('<div class="box-wow-number2">'+sWOWGame2+'</div>'); 
       $("#ShowWOWScore").html('<div class="box-wow-number2">'+sWOWScore+'</div>'); 
@@ -67,6 +72,7 @@ function AddNewWOWPoint() {
     WOWScore : 0,
     WOWGame1 : 0,
     WOWGame2 : 0,
+    WOWid : sSpace,
     ShowWOW11 : sSpace,
     ShowIMG11 : sSpace,
     ShowWOW22 : sSpace,
@@ -88,15 +94,39 @@ function AddNewWOWPoint() {
     LoadProfile();
 }
 
+
+function ClickSaveWOWid() {
+  //alert("Save");
+  if(document.getElementById("wowid").value!="") { var sWOWid = document.getElementById("wowid").value; } else { var sWOWid = "";}
+  //$("#wowid").html(sWOWid); 
+  dbWOWScore.doc(EidWOWScore).update({
+    WOWid : sWOWid
+  });
+  //galert(document.getElementById("wowid").value);
+  CloseAll();
+  LoadProfile();
+}
+
+
 function Email() {
   //var str = "";
   //$("#DisplayEmail").html(str); 
     document.getElementById('Email').style.display='block';
 }
 
+function ShowWOWid() {
+    //alert(sWOWid);
+    //$("#wowid").html(sWOWid); 
+    //alert(sWOWid);
+    document.getElementById('wowid').style.display='block';
+    document.getElementById('ShowWOWid').style.display='block';
+}
+
+
 
 function CloseAll() {
     document.getElementById('Email').style.display='none';
+    document.getElementById('ShowWOWid').style.display='none';
 }
 
 

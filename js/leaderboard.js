@@ -52,11 +52,20 @@ function DisplayLeaderBoard() {
   //.orderBy("WOWGame2", "Desc").orderBy("TimeGetGame2", "Desc")
   .orderBy('WOWGame2','desc')
   .orderBy('TimeGetGame2','asc')
-  .limit(50).get().then((snapshot)=> {
+  .limit(70).get().then((snapshot)=> {
     snapshot.forEach(doc=> {
     	//console.log(doc.data());
     	i = i+1;
-      	if(i==1) {
+      	if(doc.data().LineID==sessionStorage.getItem("LineID")) {
+			str += '<div class="box-5h4" onclick="LeaderBoard(\''+ doc.data().LineID +'\','+i+')">';
+			str += '<div style="width:60px;text-align: center;float: left;">';
+			str += '<img src="'+doc.data().LinePicture+'" class="imgprofile-ss" style="width:50px;"></div>';
+			str += '<div class="box-5h-name1">'+doc.data().LineName+'<br>'+doc.data().EmpName+'</div>';
+			str += '<div class="number5">'+(doc.data().WOWGame2).toFixed(0)+'<div class="font9-w">WOW</div></div>';
+			str += '<div class="box-5h-number1"><img src="./img/w-wow2.png" width="40">';
+			str += '<div class="number4">'+i+'</div></div>';
+			str += '</div>';
+      	} else if(i >= 1 && i <= 10) {
 			str += '<div class="box-5h1" onclick="LeaderBoard(\''+ doc.data().LineID +'\','+i+')">';
 			str += '<div style="width:60px;text-align: center;float: left;">';
 			str += '<img src="'+doc.data().LinePicture+'" class="imgprofile-ss"></div>';
@@ -65,7 +74,7 @@ function DisplayLeaderBoard() {
 			str += '<div class="box-5h-number1"><img src="./img/w-wow2.png" width="40">';
 			str += '<div class="number4">'+i+'</div></div>';
 			str += '</div>';
-      	} else if(i==2) {
+      	} else if(i >= 11 && i <= 30) {
 			str += '<div class="box-5h2" onclick="LeaderBoard(\''+ doc.data().LineID +'\','+i+')">';
 			str += '<div style="width:60px;text-align: center;float: left;">';
 			str += '<img src="'+doc.data().LinePicture+'" class="imgprofile-ss"></div>';
@@ -74,17 +83,8 @@ function DisplayLeaderBoard() {
 			str += '<div class="box-5h-number1"><img src="./img/w-wow2.png" width="40">';
 			str += '<div class="number4">'+i+'</div></div>';
 			str += '</div>';
-      	} else if(i<=10) {
+      	} else if(i >= 31 && i <= 50) {
 			str += '<div class="box-5h3" onclick="LeaderBoard(\''+ doc.data().LineID +'\','+i+')">';
-			str += '<div style="width:60px;text-align: center;float: left;">';
-			str += '<img src="'+doc.data().LinePicture+'" class="imgprofile-ss" style="width:50px;"></div>';
-			str += '<div class="box-5h-name1">'+doc.data().LineName+'<br>'+doc.data().EmpName+'</div>';
-			str += '<div class="number5">'+(doc.data().WOWGame2).toFixed(0)+'<div class="font9-w">WOW</div></div>';
-			str += '<div class="box-5h-number1"><img src="./img/w-wow2.png" width="40">';
-			str += '<div class="number4">'+i+'</div></div>';
-			str += '</div>';
-      	} else if(doc.data().LineID==sessionStorage.getItem("LineID")) {
-			str += '<div class="box-5h4" onclick="LeaderBoard(\''+ doc.data().LineID +'\','+i+')">';
 			str += '<div style="width:60px;text-align: center;float: left;">';
 			str += '<img src="'+doc.data().LinePicture+'" class="imgprofile-ss" style="width:50px;"></div>';
 			str += '<div class="box-5h-name1">'+doc.data().LineName+'<br>'+doc.data().EmpName+'</div>';
