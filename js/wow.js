@@ -26,7 +26,7 @@ function LoadFirebase() {
 }
 
 
-function LoadProfile() {
+function LoadProfile() { 
   dbWOWScore.where('LineID','==',sessionStorage.getItem("LineID"))
   .get().then((snapshot)=> {
     snapshot.forEach(doc=> {
