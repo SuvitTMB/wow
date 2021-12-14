@@ -50,10 +50,10 @@ function LoadProfile() {
       $("#ShowWOWGame1").html('<div class="box-wow-number2">'+sWOWGame1+'</div>'); 
       $("#ShowWOWGame2").html('<div class="box-wow-number2">'+sWOWGame2+'</div>'); 
       $("#ShowWOWScore").html('<div class="box-wow-number2">'+sWOWScore+'</div>'); 
-      if(sWOWid=="") {
+      //if(sWOWid=="") {
         document.getElementById('wowid').style.display='block';
         document.getElementById('ShowWOWid').style.display='block';
-      }
+      //}
     });
     if(EidWOWScore=="") {
         AddNewWOWPoint();
